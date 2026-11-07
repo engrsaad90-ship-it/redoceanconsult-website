@@ -473,6 +473,11 @@ dialog.wiz::backdrop { background: rgba(15,26,54,.72); backdrop-filter: blur(3px
 .bank div:last-child { border-bottom: 0; }
 .bank span { color: var(--slate); }
 .bank b { font-family: var(--f-data); font-weight: 500; overflow-wrap: anywhere; text-align: right; }
+.pp-box { width: 100%; max-width: 420px; min-height: 60px; }
+.pp-msg { width: 100%; max-width: 420px; background: #FCEBEE; color: #8E0F23; padding: .7rem 1rem; border-radius: 4px; font-size: .9rem; }
+.pay-alt { width: 100%; max-width: 480px; text-align: left; }
+.pay-alt summary { cursor: pointer; font-weight: 600; color: var(--navy); padding: .4rem 0; text-align: center; }
+.pay-alt .bank { margin-top: .6rem; }
 .wiz-foot { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.5rem; border-top: 1px solid var(--rule); background: var(--paper); flex-wrap: wrap; }
 .wiz-total small { display: block; font-family: var(--f-data); font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; color: var(--slate); }
 .wiz-total b { font: 700 1.6rem/1 var(--f-display); font-variant-numeric: tabular-nums; }
@@ -1407,17 +1412,63 @@ dialog.wiz::backdrop { background: rgba(15,26,54,.72); backdrop-filter: blur(3px
     }
     if (step === 3) {
       h += '<div class="done-box"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="32" cy="32" r="28"/><path d="M20 33l8 8 16-17"/></svg>';
-      if (result && result.paymentUrl) {
-        h += '<h3>Quotation approved</h3><p>Order reference <b class="mono">' + esc(result.ref) + '</b>. Complete your payment of <b>' + sar(result.total) + '</b> on the secure payment page.</p><a class="btn btn--red" href="' + esc(result.paymentUrl) + '" target="_blank" rel="noopener">Pay ' + sar(result.total) + ' now</a>';
-      } else if (result) {
-        h += '<h3>Quotation approved</h3><p>Order reference <b class="mono">' + esc(result.ref) + '</b>. Please transfer <b>' + sar(result.total) + '</b> to the account below. These details have also been emailed to you.</p><div class="bank">';
-        Object.keys(result.bank || {}).forEach(function (k) { h += '<div><span>' + esc(k) + '</span><b>' + esc(result.bank[k]) + '</b></div>'; });
-        h += '</div>';
+      if (result.paid) {
+        h += '<h3>Payment received</h3><p>Thank you. Your payment for order <b class="mono">' + esc(result.ref) + '</b> is complete and a receipt has been emailed to ' + esc(client.email) + '.</p>' +
+             '<p class="fineprint">PayPal transaction ' + esc(result.paid) + '. Our team will contact you within one business day to collect the contract, programme and records.</p></div>';
+      } else {
+        h += '<h3>Quotation approved</h3><p>Order reference <b class="mono">' + esc(result.ref) + '</b>. Total due <b>' + sar(result.total) + '</b>.</p>';
+        if (result.paypal) {
+          h += '<p class="fineprint">PayPal charges in US dollars: <b>USD ' + Number(result.paypal.usd).toLocaleString('en-US', { minimumFractionDigits: 2 }) + '</b> (fixed rate ' + esc(result.paypal.rate) + ' SAR = 1 USD). Pay with your PayPal account or any debit or credit card.</p>' +
+               '<div class="pp-box" id="pp-buttons"><p class="fineprint">Loading secure payment…</p></div><p class="pp-msg" id="pp-msg" role="alert" hidden></p>';
+        }
+        var bank = result.bank || {};
+        if (Object.keys(bank).length) {
+          h += (result.paypal ? '<details class="pay-alt"><summary>Prefer bank transfer?</summary>' : '<p>Please transfer the total to the account below. These details have also been emailed to you.</p>') + '<div class="bank">';
+          Object.keys(bank).forEach(function (k) { h += '<div><span>' + esc(k) + '</span><b>' + esc(bank[k]) + '</b></div>'; });
+          h += '</div>' + (result.paypal ? '</details>' : '');
+        }
+        if (!result.paypal && !Object.keys(bank).length) h += '<p>We will email you payment instructions within one business day.</p>';
+        h += '<p class="fineprint">Once payment is received, we will contact you to collect the contract, programme and records.</p></div>';
       }
-      h += '<p class="fineprint">Once payment is received, we will contact you to collect the contract, programme and records.</p></div>';
     }
     body.innerHTML = h;
     body.scrollTop = 0;
+    if (step === 3 && result.paypal && !result.paid) mountPayPal();
+  }
+  function post(url, data) {
+    return fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
+      .then(function (r) { return r.json(); });
+  }
+  function ppMessage(text) { var m = document.getElementById('pp-msg'); if (m) { m.textContent = text; m.hidden = !text; } }
+  function mountPayPal() {
+    var box = document.getElementById('pp-buttons');
+    var go = function () {
+      box.innerHTML = '';
+      window.paypal.Buttons({
+        style: { layout: 'vertical', color: 'gold', shape: 'rect', label: 'pay' },
+        createOrder: function () {
+          ppMessage('');
+          return post('paypal.php', { action: 'create', ref: result.ref }).then(function (d) {
+            if (!d.ok) throw new Error(d.error); return d.id;
+          });
+        },
+        onApprove: function (data) {
+          ppMessage('Confirming your payment…');
+          return post('paypal.php', { action: 'capture', ref: result.ref, orderID: data.orderID }).then(function (d) {
+            if (d.ok) { result.paid = d.captureId; render(); }
+            else ppMessage(d.error || 'The payment was not completed. Please try again.');
+          });
+        },
+        onCancel: function () { ppMessage('Payment cancelled. You have not been charged. You can try again whenever you are ready.'); },
+        onError: function (err) { ppMessage((err && err.message) || 'PayPal is not available right now. Please try again or contact us.'); }
+      }).render('#pp-buttons');
+    };
+    if (window.paypal) return go();
+    var sdk = document.createElement('script');
+    sdk.src = 'https://www.paypal.com/sdk/js?client-id=' + encodeURIComponent(result.paypal.clientId) + '&currency=USD&intent=capture';
+    sdk.onload = go;
+    sdk.onerror = function () { box.innerHTML = ''; ppMessage('PayPal could not load. Check your connection or use the bank transfer option.'); };
+    document.head.appendChild(sdk);
   }
   function fld(k, label, type, ac) {
     return '<div class="field"><label for="w-' + k + '">' + label + '</label><input id="w-' + k + '" data-c="' + k + '" type="' + type + '" autocomplete="' + ac + '" value="' + esc(client[k] || '') + '"></div>';
@@ -1455,7 +1506,6 @@ dialog.wiz::backdrop { background: rgba(15,26,54,.72); backdrop-filter: blur(3px
           sending = false;
           if (!d.ok) return render(d.error || 'Your order could not be processed.');
           result = d; step = 3; render();
-          if (d.paymentUrl) setTimeout(function () { window.location.href = d.paymentUrl; }, 1800);
         })
         .catch(function () { sending = false; render('Online ordering is not available right now. Please email this quotation request to saadsr@redoceanconsult.com or call +966 58 290 7870.'); });
       return;

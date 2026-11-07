@@ -3,3 +3,6 @@ redoceanconsult-website.zip
 preview.html
 # Customer orders saved on the server — never commit
 orders/
+
+# Private settings (real file lives outside public_html)
+redocean-config.php

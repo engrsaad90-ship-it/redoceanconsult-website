@@ -56,17 +56,13 @@ Open `pricing.json` in cPanel File Manager → Edit. For each service you can ch
 The website and `order.php` both read this one file, so the price a client sees is always the price charged.
 The prices supplied are **examples** — replace them with your own before going live.
 
-## Set up payment — top of `order.php`
-- **Payment link with amount:** set `$PAYMENT_URL`, e.g. `https://www.paypal.me/YOURNAME/{amount}SAR`.
-  The client is redirected there automatically after approving.
-- **Bank transfer (default):** leave `$PAYMENT_URL = ''` and fill in your bank name and IBAN in `$BANK`.
-  The client sees the details on screen and by email, with the order reference.
-- **Card / mada / Apple Pay (Moyasar, Tap, PayTabs, HyperPay):** these need an API key so each order gets
-  its own invoice. Open an account and send the API details to your developer to connect.
+## Set up payment
+Payment settings are in a private file, `redocean-config.php`, kept one level above `public_html`
+(see "PayPal payments" below). Clients can pay by PayPal or card, and/or bank transfer if you add an IBAN.
 
 ## Where orders go
 - Every order is emailed to saadsr@redoceanconsult.com, and the client receives a copy of the quotation.
-- Every order is also saved to `public_html/orders/orders.csv` (download it from File Manager and open in Excel).
+- Every order and every payment is also saved to `public_html/orders/orders.csv` (download it from File Manager and open in Excel).
   The folder is locked so the public cannot view it.
 
 ---
@@ -107,3 +103,41 @@ One-time setup:
 4. Test: GitHub → **Actions** → **Deploy to Namecheap** → **Run workflow**. A green tick = live.
 
 From then on every push deploys automatically. Never paste the token anywhere except GitHub Secrets.
+
+---
+
+# PayPal payments
+
+Clients approve the quotation, then pay with PayPal or any debit/credit card in a PayPal pop-up.
+PayPal does not support SAR, so it charges the US-dollar equivalent at the fixed rate of 3.75 SAR = 1 USD
+(e.g. SAR 12,650 → USD 3,373.33). The website shows both amounts.
+Your server creates every PayPal payment from the saved quotation and verifies the amount with PayPal
+before marking an order paid, so the price cannot be changed in the browser.
+
+## 1. Get your PayPal keys
+1. You need a **PayPal Business** account (paypal.com → Sign up → Business, or upgrade your personal account).
+2. Go to **developer.paypal.com** and log in with that account.
+3. **Apps & Credentials** → make sure **Sandbox** is selected → **Create App** → name it `Red Ocean Website`.
+4. Copy the **Client ID** and **Secret**.
+
+## 2. Create the private settings file on Namecheap
+1. cPanel → **File Manager**. Go to your home folder `/home/redohmgq/` — the folder that CONTAINS
+   `public_html`, not inside it.
+2. **+ File** → name it `redocean-config.php` → right-click → **Edit**.
+3. Paste the contents of `config.sample.php` from GitHub, fill in `paypal_client_id` and `paypal_secret`,
+   and (optionally) your bank details. Save.
+   Never put this file inside `public_html` or on GitHub.
+
+## 3. Test with sandbox (no real money)
+1. developer.paypal.com → **Testing Tools → Sandbox Accounts** shows a test *Personal* account
+   (email + password).
+2. On your website, place an order, click **PayPal**, and log in with that test account. Approve the payment.
+3. You should see **Payment received**, get a "PAID" email, and see a `paid (PayPal)` row in `orders/orders.csv`.
+
+## 4. Go live
+1. developer.paypal.com → switch to **Live** → **Create App** → copy the live Client ID and Secret.
+2. In `redocean-config.php` set `'paypal_mode' => 'live'` and paste the live keys. Save.
+3. Make one small real payment to confirm, then refund it from your PayPal account.
+
+PayPal charges its standard fees per transaction; payouts land in your PayPal balance, from which you can
+withdraw to your Saudi bank account.

@@ -1,30 +1,9 @@
 <?php
 // Online order handler for www.redoceanconsult.com
 // Recalculates the quotation from pricing.json (never trusts prices sent by the browser),
-// saves the order, emails Red Ocean Consult and the client, and returns the payment link.
+// saves the order, emails Red Ocean Consult and the client, and returns the payment options.
 header('Content-Type: application/json');
-
-// ── Settings ──────────────────────────────────────────────────────────────
-$NOTIFY_TO  = 'saadsr@redoceanconsult.com';
-$FROM       = 'website@redoceanconsult.com';
-
-// Payment: pick ONE option.
-// 1) A payment link that accepts the amount in the URL, e.g. PayPal.me:
-//      'https://www.paypal.me/YOURNAME/{amount}SAR'
-//    Placeholders: {amount} {ref} {email} {name}
-// 2) A fixed payment page link (client enters the amount shown on the quotation).
-// 3) Leave empty '' to show bank transfer details instead (below).
-$PAYMENT_URL = '';
-$BANK = [
-  'Bank'            => '[YOUR BANK NAME]',
-  'Account name'    => 'Red Ocean Consult',
-  'IBAN'            => '[SA00 0000 0000 0000 0000 0000]',
-  'Reference'       => '{ref}',
-];
-// ──────────────────────────────────────────────────────────────────────────
-
-function fail($code, $msg) { http_response_code($code); echo json_encode(['ok' => false, 'error' => $msg]); exit; }
-function clean($v) { return trim(str_replace(["\r", "\n"], ' ', strip_tags((string)($v ?? '')))); }
+require __DIR__ . '/common.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') fail(405, 'Method not allowed');
 $in = json_decode(file_get_contents('php://input'), true);
@@ -48,19 +27,20 @@ if (isset($svc['unit'])) {
 $express = !empty($in['express']);
 $picked  = is_array($in['items'] ?? null) ? $in['items'] : [];
 if (($svc['choice'] ?? '') === 'single') {
-  $ids = array_column($svc['items'], 'id');
-  $picked = array_values(array_intersect($picked, $ids));
+  $picked = array_values(array_intersect($picked, array_column($svc['items'], 'id')));
   if (count($picked) !== 1) fail(422, 'Please choose one option.');
 }
 
 $c = $in['client'] ?? [];
-$name    = clean($c['name'] ?? '');
-$email   = filter_var(trim($c['email'] ?? ''), FILTER_VALIDATE_EMAIL);
-$phone   = clean($c['phone'] ?? '');
-$company = clean($c['company'] ?? '');
-$project = clean($c['project'] ?? '');
-$notes   = trim(strip_tags((string)($c['notes'] ?? '')));
-if ($name === '' || !$email || $project === '') fail(422, 'Please add your name, email and project name.');
+$client = [
+  'name'    => clean($c['name'] ?? ''),
+  'email'   => filter_var(trim($c['email'] ?? ''), FILTER_VALIDATE_EMAIL) ?: '',
+  'phone'   => clean($c['phone'] ?? ''),
+  'company' => clean($c['company'] ?? ''),
+  'project' => clean($c['project'] ?? ''),
+  'notes'   => trim(strip_tags((string)($c['notes'] ?? ''))),
+];
+if ($client['name'] === '' || $client['email'] === '' || $client['project'] === '') fail(422, 'Please add your name, email and project name.');
 
 // Same calculation as the website
 $lines = []; $subtotal = 0; $days = 0;
@@ -81,41 +61,34 @@ $days  = max(1, (int)ceil(max($days, $svc['baseDays']) * ($express ? $cfg['expre
 $vat   = (int)round($subtotal * $cfg['vatRate']);
 $total = $subtotal + $vat;
 
-$ref = 'RO-' . strtoupper($sid === 'baseline' ? 'BL' : ($sid === 'eot' ? 'EOT' : 'QC')) . '-' . date('ymd') . '-' . strtoupper(substr(bin2hex(random_bytes(3)), 0, 4));
+$code = $sid === 'baseline' ? 'BL' : ($sid === 'eot' ? 'EOT' : 'QC');
+$ref = "RO-$code-" . date('ymd') . '-' . strtoupper(bin2hex(random_bytes(4)));
 
-// Save order log (folder is protected by its own .htaccess)
-$dir = __DIR__ . '/orders';
-if (!is_dir($dir)) { mkdir($dir, 0750, true); file_put_contents("$dir/.htaccess", "Require all denied\nDeny from all\n"); }
-$fh = fopen("$dir/orders.csv", 'a');
-if ($fh) {
-  if (filesize("$dir/orders.csv") === 0) fputcsv($fh, ['date','ref','service','client','company','email','phone','project','value band','units','express','items','subtotal','vat','total','working days']);
-  fputcsv($fh, [date('Y-m-d H:i'), $ref, $svc['title'], $name, $company, $email, $phone, $project, $band['label'], $units, $express ? 'yes' : 'no', implode(' | ', array_column($lines, 0)), $subtotal, $vat, $total, $days]);
-  fclose($fh);
-}
+$order = [
+  'ref' => $ref, 'created' => date('c'), 'status' => 'awaiting_payment',
+  'service' => $svc['title'], 'band' => $band['label'], 'units' => $units, 'express' => $express,
+  'lines' => $lines, 'subtotal' => $subtotal, 'vat' => $vat, 'vat_pct' => $cfg['vatRate'] * 100,
+  'total' => $total, 'usd' => usd_amount($total), 'days' => $days, 'valid_days' => $cfg['validityDays'],
+  'client' => $client,
+];
+save_order($order);
+log_csv(order_row($order, 'quotation approved'));
 
-// Payment instructions
-$fill = function ($s) use ($total, $ref, $email, $name) {
-  return str_replace(['{amount}','{ref}','{email}','{name}'], [$total, rawurlencode($ref), rawurlencode($email), rawurlencode($name)], $s);
-};
-$payUrl = $PAYMENT_URL ? $fill($PAYMENT_URL) : '';
-$bank = [];
-if (!$payUrl) foreach ($BANK as $k => $v) $bank[$k] = str_replace('{ref}', $ref, $v);
+$bank = bank_details($ref);
+$s = settings();
 
 // Emails
-$fmt = function ($n) { return 'SAR ' . number_format($n); };
-$quote = "Quotation $ref\n" . $svc['title'] . " — $project\nProject value: {$band['label']}\n\n";
-foreach ($lines as $l) $quote .= str_pad($l[0], 52) . $fmt($l[1]) . "\n";
-$quote .= str_repeat('-', 64) . "\n" . str_pad('Subtotal', 52) . $fmt($subtotal) . "\n" . str_pad('VAT ' . ($cfg['vatRate'] * 100) . '%', 52) . $fmt($vat) . "\n" . str_pad('TOTAL', 52) . $fmt($total) . "\n\nEstimated delivery: $days working days from receipt of documents.\nQuotation valid for {$cfg['validityDays']} days.\n";
+$internal = "New online order — awaiting payment\n\nClient:  {$client['name']}\nCompany: {$client['company']}\nEmail:   {$client['email']}\nPhone:   {$client['phone']}\nNotes:   {$client['notes']}\n\n" . quote_text($order);
+send_mail($s['notify_to'], "New order $ref – {$svc['title']} – " . sar($total), $internal, "{$client['name']} <{$client['email']}>");
 
-$hdr = "From: Red Ocean Consult <$FROM>\r\nContent-Type: text/plain; charset=UTF-8\r\n";
-$sub = function ($s) { return '=?UTF-8?B?' . base64_encode($s) . '?='; };
+$msg = "Dear {$client['name']},\n\nThank you for your order with Red Ocean Consult. Your quotation is below.\n\n" . quote_text($order) . "\n";
+if (paypal_enabled()) $msg .= "If you did not complete the PayPal payment on our website, reply to this email and we will send you a PayPal invoice.\n";
+if ($bank) $msg .= "\nYou can also pay by bank transfer:\n" . implode("\n", array_map(fn($k, $v) => "$k: $v", array_keys($bank), $bank)) . "\n";
+$msg .= "\nOnce payment is received we will contact you to collect the project documents.\n\nRed Ocean Consult\n+966 58 290 7870 · {$s['notify_to']}\nwww.redoceanconsult.com\n";
+send_mail($client['email'], "Your Red Ocean Consult quotation $ref", $msg, "Red Ocean Consult <{$s['notify_to']}>");
 
-$internal = "New online order — awaiting payment\n\nClient:  $name\nCompany: $company\nEmail:   $email\nPhone:   $phone\nNotes:   $notes\n\n$quote";
-@mail($NOTIFY_TO, $sub("New order $ref – {$svc['title']} – " . $fmt($total)), $internal, $hdr . "Reply-To: $name <$email>\r\n", "-f$FROM");
-
-$client = "Dear $name,\n\nThank you for your order with Red Ocean Consult. Your quotation is below.\n\n$quote\n";
-$client .= $payUrl ? "Pay securely here: $payUrl\n" : "Please pay by bank transfer:\n" . implode("\n", array_map(fn($k, $v) => "$k: $v", array_keys($bank), $bank)) . "\n";
-$client .= "\nOnce payment is received we will contact you to collect the project documents.\n\nRed Ocean Consult\n+966 58 290 7870 · $NOTIFY_TO\nwww.redoceanconsult.com\n";
-@mail($email, $sub("Your Red Ocean Consult quotation $ref"), $client, $hdr . "Reply-To: Red Ocean Consult <$NOTIFY_TO>\r\n", "-f$FROM");
-
-echo json_encode(['ok' => true, 'ref' => $ref, 'total' => $total, 'paymentUrl' => $payUrl, 'bank' => $bank]);
+echo json_encode([
+  'ok' => true, 'ref' => $ref, 'total' => $total,
+  'paypal' => paypal_enabled() ? ['clientId' => $s['paypal_client_id'], 'usd' => $order['usd'], 'rate' => $s['sar_per_usd']] : null,
+  'bank' => $bank,
+]);
