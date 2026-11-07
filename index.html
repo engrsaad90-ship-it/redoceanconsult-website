@@ -12,6 +12,7 @@
 <meta property="og:image" content="https://www.redoceanconsult.com/assets/img/project-kafd-2-14.jpg">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#16244A">
+<link rel="icon" href="assets/img/logo-mark.svg" type="image/svg+xml">
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/favicon.png">
 <link rel="canonical" href="https://www.redoceanconsult.com/">
@@ -53,7 +54,7 @@
 }
 *,*::before,*::after { box-sizing: border-box; }
 [hidden] { display: none !important; }
-html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+html { scroll-behavior: smooth; scroll-padding-top: 92px; }
 body {
   margin: 0; background: var(--white); color: var(--ink);
   font-family: var(--f-ui); font-size: 1.0625rem; line-height: 1.6;
@@ -94,8 +95,8 @@ ul, ol { margin: 0; padding: 0; }
 
 /* Header */
 .site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: rgba(255,255,255,.94); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--rule); }
-.nav { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; height: 76px; }
-.brand img { height: 52px; width: auto; }
+.nav { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; height: 84px; }
+.brand img { height: 66px; width: auto; }
 .nav-links { display: flex; gap: 1.8rem; list-style: none; }
 .nav-links a { text-decoration: none; font: 600 .98rem var(--f-display); letter-spacing: .1em; text-transform: uppercase; color: var(--slate); transition: color .2s; }
 .nav-links a:hover { color: var(--crimson); }
@@ -341,7 +342,7 @@ form.enquiry { background: var(--white); color: var(--ink); border-radius: 6px; 
 .site-footer { background: var(--navy-deep); color: var(--on-navy-mute); padding-block: 3.5rem 2rem; font-size: .92rem; }
 .foot { display: grid; grid-template-columns: minmax(0,1.3fr) repeat(3, minmax(0,1fr)); gap: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--rule-dark); }
 .foot-brand { display: grid; gap: 1rem; align-content: start; }
-.foot-brand img { width: 140px; border-radius: 6px; }
+.foot-brand img { width: 160px; height: auto; }
 .foot-brand p { font: 600 1.2rem var(--f-display); letter-spacing: .1em; text-transform: uppercase; color: var(--on-navy); }
 .foot h4 { font: 600 .85rem var(--f-display); letter-spacing: .16em; text-transform: uppercase; color: var(--on-navy); margin-bottom: .9rem; }
 .foot ul { list-style: none; display: grid; gap: .5rem; }
@@ -368,7 +369,7 @@ form.enquiry { background: var(--white); color: var(--ink); border-radius: 6px; 
   .dtypes, .tools { grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
 @media (max-width: 680px) {
-  .brand img { height: 44px; }
+  .brand img { height: 54px; }
   .numbers ul { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .numbers li:nth-child(n) { padding-left: 1.2rem; border-left: 1px solid var(--rule-dark); }
   .numbers li:nth-child(odd) { padding-left: 0; border-left: 0; }
@@ -502,7 +503,7 @@ dialog.wiz::backdrop { background: rgba(15,26,54,.72); backdrop-filter: blur(3px
 <header class="site-header">
   <div class="wrap">
     <nav class="nav" aria-label="Main">
-      <a class="brand" href="#top" aria-label="Red Ocean Consult home"><img src="assets/img/logo.png" alt="Red Ocean Consult" width="416" height="266"></a>
+      <a class="brand" href="#top" aria-label="Red Ocean Consult home"><img src="assets/img/logo.svg" alt="Red Ocean Consult" width="378" height="266"></a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
@@ -1224,7 +1225,7 @@ dialog.wiz::backdrop { background: rgba(15,26,54,.72); backdrop-filter: blur(3px
   <div class="wrap">
     <div class="foot">
       <div class="foot-brand">
-        <img src="assets/img/logo.png" alt="Red Ocean Consult" width="416" height="266" loading="lazy">
+        <img src="assets/img/logo-white.svg" alt="Red Ocean Consult" width="378" height="266" loading="lazy">
         <p>Every delay traced. Every day recovered.</p>
       </div>
       <div>
