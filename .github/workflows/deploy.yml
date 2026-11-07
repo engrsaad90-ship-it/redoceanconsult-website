@@ -1,0 +1,41 @@
+name: Deploy to Namecheap
+
+# Every push to main: cPanel pulls the latest code from GitHub, then runs .cpanel.yml
+# to copy the website into public_html.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency: deploy
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      HOST: ${{ secrets.CPANEL_HOST }}
+      CP_USER: ${{ secrets.CPANEL_USER }}
+      TOKEN: ${{ secrets.CPANEL_TOKEN }}
+    steps:
+      - name: Check settings
+        run: |
+          for v in HOST CP_USER TOKEN; do
+            if [ -z "${!v}" ]; then echo "::error::Missing GitHub secret for $v (see DEPLOY-GUIDE.md)"; exit 1; fi
+          done
+
+      - name: Pull latest code into cPanel
+        run: |
+          ROOT="/home/$CP_USER/repositories/redoceanconsult-website"
+          curl -sS --fail-with-body -G -H "Authorization: cpanel $CP_USER:$TOKEN" \
+            "https://$HOST:2083/execute/VersionControl/update" \
+            --data-urlencode "repository_root=$ROOT" --data-urlencode "branch=main" | tee pull.json
+          jq -e '.status == 1' pull.json > /dev/null || { echo "::error::cPanel could not pull from GitHub"; exit 1; }
+
+      - name: Deploy to public_html
+        run: |
+          ROOT="/home/$CP_USER/repositories/redoceanconsult-website"
+          curl -sS --fail-with-body -G -H "Authorization: cpanel $CP_USER:$TOKEN" \
+            "https://$HOST:2083/execute/VersionControlDeployment/create" \
+            --data-urlencode "repository_root=$ROOT" | tee deploy.json
+          jq -e '.status == 1' deploy.json > /dev/null || { echo "::error::cPanel deployment failed"; exit 1; }
+          echo "Deployment queued. The site updates in a few seconds."

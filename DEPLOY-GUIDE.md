@@ -85,3 +85,25 @@ One-time setup:
 
 Every later update (after changes are pushed to GitHub):
 **Manage → Pull or Deploy → Update from Remote**, then **Deploy HEAD Commit**.
+
+---
+
+# Automatic deployment (every push to GitHub goes live)
+
+`.github/workflows/deploy.yml` tells cPanel to pull and deploy whenever `main` changes.
+Requires the cPanel Git repository from the section above to exist at
+`repositories/redoceanconsult-website`.
+
+One-time setup:
+1. **Create a cPanel API token:** cPanel → search **Manage API Tokens** → **Create**.
+   Name it `github-deploy`, leave "expires" off, click **Create**, and copy the token (it is shown only once).
+2. **Find your server name:** cPanel home page → right-hand **General Information** panel →
+   **Server Name** / hostname (looks like `server123.web-hosting.com`).
+3. **Add three secrets on GitHub:** repository → **Settings → Secrets and variables → Actions →
+   New repository secret**:
+   - `CPANEL_HOST` = the server hostname, e.g. `server123.web-hosting.com`
+   - `CPANEL_USER` = your cPanel username, `redohmgq`
+   - `CPANEL_TOKEN` = the API token from step 1
+4. Test: GitHub → **Actions** → **Deploy to Namecheap** → **Run workflow**. A green tick = live.
+
+From then on every push deploys automatically. Never paste the token anywhere except GitHub Secrets.
