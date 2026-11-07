@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://www.redoceanconsult.com/">
 <meta property="og:image" content="https://www.redoceanconsult.com/assets/img/project-kafd-2-14.jpg">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#16244A">
+<meta name="theme-color" content="#060B18">
 <link rel="icon" href="assets/img/logo-mark.svg" type="image/svg+xml">
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/favicon.png">
@@ -532,6 +532,222 @@ dialog.wiz::backdrop { background: rgba(15,26,54,.72); backdrop-filter: blur(3px
   *, *::before, *::after { animation: none !important; transition: none !important; }
   html { scroll-behavior: auto; }
 }
+
+/* ═══════════ Cinematic theme ═══════════
+   Deep-sea navy canvas, frosted-glass surfaces, crimson light. Light tokens above stay for the
+   white forms (enquiry form, order window); everything on the page itself is restyled here. */
+:root {
+  --bg: #060B18;
+  --bg-2: #0A1328;
+  --text: #EAF0FA;
+  --text-mute: #93A3C2;
+  --line: rgba(255,255,255,.09);
+  --glass: linear-gradient(180deg, rgba(255,255,255,.065), rgba(255,255,255,.02));
+  --accent: #FF5A6E;
+  --accent-2: #FF8A6A;
+  --radius: 16px;
+  color-scheme: dark;
+}
+body { background: var(--bg); color: var(--text); }
+body::before { background: var(--bg); }
+body::after { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 70; opacity: .05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+::selection { background: var(--crimson); color: #fff; }
+
+/* Bands */
+.band { position: relative; background: var(--bg); }
+.band--paper, .band--navy { background: var(--bg-2); color: var(--text); }
+.band--paper::before, .band--navy::before { content: ""; position: absolute; inset: 0 0 auto; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,90,110,.35), transparent); }
+.label, .band--navy .label { color: var(--accent); }
+.label::before { box-shadow: 0 0 12px var(--accent); }
+.h2 em, .band--navy .h2 em, .hero h1 span + span {
+  background: linear-gradient(92deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.lede, .band--navy .lede { color: var(--text-mute); }
+.btn { border-radius: 10px; }
+.btn--red { box-shadow: 0 12px 30px -12px rgba(224,40,60,.85); }
+.btn--red:hover { box-shadow: 0 16px 36px -10px rgba(224,40,60,.95); }
+.btn--line { border-color: rgba(255,255,255,.22); background: rgba(255,255,255,.04); backdrop-filter: blur(6px); }
+
+/* Glass surfaces + cursor spotlight */
+.spot { position: relative; isolation: isolate; }
+.spot::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: -1; opacity: 0; transition: opacity .3s;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(255,90,110,.13), transparent 45%); }
+.spot:hover::after { opacity: 1; }
+
+/* Header */
+.site-header { background: transparent; border-bottom-color: transparent; color: var(--text); transition: background .35s, border-color .35s, box-shadow .35s; }
+.site-header.scrolled { background: rgba(6,11,24,.78); border-bottom-color: var(--line); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: 0 10px 30px -18px rgba(0,0,0,.8); }
+.nav-links a { color: rgba(234,240,250,.72); }
+.nav-links a:hover, .nav-links a.active { color: #fff; }
+.nav-links a.active { text-shadow: 0 0 18px rgba(255,90,110,.6); }
+.menu-btn { color: #fff; }
+.mobile-menu a { border-top-color: var(--line); color: var(--text); }
+.nav.open + .mobile-menu { background: rgba(6,11,24,.96); margin-inline: -20px; padding-inline: 20px; }
+
+/* Hero */
+.hero { margin-top: -84px; padding-top: 84px; min-height: clamp(640px, 94svh, 960px); display: grid; align-items: center; background:
+  radial-gradient(60% 70% at 15% 30%, rgba(200,16,46,.22), transparent 60%),
+  radial-gradient(50% 60% at 85% 80%, rgba(40,80,170,.25), transparent 65%), var(--bg); }
+.hero::before { opacity: .18; }
+.hero::after { content: ""; position: absolute; inset: auto 0 0; height: 160px; background: linear-gradient(transparent, var(--bg)); pointer-events: none; z-index: 1; }
+.hero-grid { z-index: 2; }
+.hero h1 { font-size: clamp(3rem, 5.6vw, 5.4rem); max-width: 11ch; text-shadow: 0 10px 40px rgba(0,0,0,.4); }
+.hero .lede { color: #B9C5DD; }
+.hero-wall { position: absolute; top: 0; bottom: 0; right: 0; width: 58%; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; padding-inline: 14px; overflow: hidden; z-index: 0; transform: rotate(-4deg) scale(1.12); transform-origin: center;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 35%); mask-image: linear-gradient(90deg, transparent, #000 35%);
+  opacity: .55; }
+.wall-col { overflow: hidden; }
+.wall-track { display: grid; gap: 14px; animation: wall-up 60s linear infinite; }
+.wall-col:nth-child(2) .wall-track { animation-direction: reverse; animation-duration: 75s; }
+.wall-col:nth-child(3) .wall-track { animation-duration: 68s; }
+.wall-track img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 14px; filter: saturate(.85) contrast(1.05); }
+@keyframes wall-up { from { transform: translateY(0); } to { transform: translateY(-50%); } }
+.programme { background: rgba(10,19,40,.62); border: 1px solid rgba(255,255,255,.14); border-radius: 18px; backdrop-filter: blur(18px) saturate(1.2); -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  box-shadow: 0 40px 80px -30px rgba(0,0,0,.85), inset 0 1px 0 rgba(255,255,255,.08); }
+.scroll-cue { position: absolute; left: 50%; bottom: 26px; z-index: 3; transform: translateX(-50%); display: grid; justify-items: center; gap: .4rem; font-family: var(--f-data); font-size: .66rem; letter-spacing: .2em; text-transform: uppercase; color: var(--text-mute); text-decoration: none; }
+.scroll-cue::after { content: ""; width: 1px; height: 38px; background: linear-gradient(var(--accent), transparent); animation: cue 2s ease-in-out infinite; transform-origin: top; }
+@keyframes cue { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); } 100% { transform: scaleY(1); opacity: 0; } }
+
+/* Numbers */
+.numbers { background: transparent; position: relative; z-index: 2; margin-top: -40px; }
+.numbers ul { background: var(--glass); border: 1px solid var(--line); border-radius: var(--radius); backdrop-filter: blur(12px); padding-inline: 1.4rem; box-shadow: 0 30px 60px -30px rgba(0,0,0,.7); }
+.numbers li + li { border-left-color: var(--line); }
+.numbers b { background: linear-gradient(180deg, #fff, #B9C5DD); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.numbers b sup { -webkit-text-fill-color: var(--accent); }
+.numbers span { color: var(--text-mute); }
+
+/* Story */
+.story-photos img { border-radius: var(--radius); box-shadow: 0 30px 60px -25px rgba(0,0,0,.8); outline: 1px solid var(--line); }
+.story-photos img:first-child { box-shadow: 0 30px 60px -25px rgba(0,0,0,.8), -20px 20px 60px -20px rgba(200,16,46,.45); }
+.story-copy .prose { color: #C3CDE0; }
+.pull { color: #fff; border-left-color: var(--accent); }
+.mission { background: linear-gradient(135deg, #C8102E, #8E0B21 70%); border-radius: var(--radius); box-shadow: 0 30px 70px -30px rgba(200,16,46,.75); }
+
+/* Research + hurdles */
+.research { border-top: 1px solid var(--line); }
+.stat + .stat { border-left-color: var(--line); }
+.stat b { color: var(--accent); text-shadow: 0 0 40px rgba(255,90,110,.35); }
+.stat p { color: #C3CDE0; }
+.stat cite, .research-note { color: var(--text-mute); }
+.pa-card { background: var(--glass); border-color: var(--line); border-radius: var(--radius); }
+.pa-problem { border-bottom-color: var(--line); }
+.pa-problem .mono { color: var(--accent); }
+.pa-problem p { color: var(--text-mute); }
+.pa-answer { background: rgba(255,255,255,.02); }
+.pa-answer h4 { color: #fff; }
+.pa-answer h4 svg { color: var(--accent); }
+.ticks li::before { border-color: var(--accent); }
+.motto { color: var(--text-mute); }
+
+/* Lifecycle */
+.lifecycle { border-color: var(--line); border-radius: var(--radius); background: var(--glass); overflow: hidden; }
+.stage + .stage { border-left-color: var(--line); }
+.stage-head { border-bottom: 2px solid transparent; border-image: linear-gradient(90deg, var(--accent), transparent) 1; }
+.why3 li { border-top-color: var(--line); }
+
+/* Order */
+.pkg { background: var(--glass); border-color: var(--line); border-radius: var(--radius); color: var(--text); }
+.pkg:hover { border-color: rgba(255,90,110,.45); box-shadow: 0 30px 60px -30px rgba(200,16,46,.5); }
+.pkg .mono { color: var(--accent); }
+.pkg > p { color: #C3CDE0; }
+.pkg .ticks { color: var(--text-mute); }
+.pkg-foot { border-top-color: var(--line); }
+.pkg-from small { color: var(--text-mute); }
+.order-how { border-top: 1px solid var(--line); }
+.order-how li { color: var(--text-mute); }
+.order-how li + li { border-left-color: var(--line); }
+.order-how li::before { color: var(--accent); }
+.order-how b { color: #fff; }
+
+/* Delay analysis */
+.steps6 { background: var(--line); border-color: var(--line); border-radius: var(--radius); overflow: hidden; }
+.steps6 li { background: var(--bg-2); }
+.steps6 .mono, .flow li::before { color: var(--accent); }
+.steps6 p, .method p, .dtype span, .flow li { color: var(--text-mute); }
+.flow b { color: var(--text); }
+.flow li { border-bottom-color: var(--line); }
+.method { border-bottom-color: var(--line); }
+.method:first-child { border-top: 1px solid var(--line); }
+.dtype { background: var(--glass); border-color: var(--line); border-radius: 12px; }
+.dtype--tc { background: rgba(200,16,46,.12); border-color: rgba(255,90,110,.5); }
+.dtype--tc b { color: var(--accent); }
+.receive-box { background: var(--glass); border-color: var(--line); border-radius: var(--radius); }
+.note-red { background: linear-gradient(135deg, #C8102E, #8E0B21 70%); border-radius: var(--radius); }
+#delay-analysis h3.mono { color: var(--text-mute) !important; }
+
+/* Features */
+.feature img, .pre-card img { border-radius: var(--radius); }
+.feature img { box-shadow: 0 40px 80px -35px rgba(0,0,0,.85); outline: 1px solid var(--line); }
+.chips li { background: rgba(255,255,255,.04); border-color: var(--line); color: var(--text); }
+.pre-card { background: var(--glass); border-color: var(--line); border-radius: var(--radius); }
+.pre-card img { border-radius: 0; }
+.pre-body > p { color: #C3CDE0; }
+.pre-body > p.callout, .callout { background: rgba(200,16,46,.12); border: 1px solid rgba(255,90,110,.3); color: var(--text); border-radius: 10px; }
+
+/* Projects: photo-led */
+.sector { border-radius: 14px; }
+.project { position: relative; background: #0B1428; border-color: var(--line); border-radius: var(--radius); overflow: hidden; display: block; min-height: 380px; }
+.project:hover { box-shadow: 0 30px 60px -25px rgba(0,0,0,.9); }
+.project-img { position: absolute; inset: 0; aspect-ratio: auto; }
+.project-img img { transition: transform .9s cubic-bezier(.2,.7,.2,1); }
+.project:hover .project-img img { transform: scale(1.06); }
+.project-img::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,11,24,.05) 25%, rgba(6,11,24,.92) 78%); }
+.project-value { z-index: 1; border-radius: 8px; box-shadow: 0 8px 20px -6px rgba(200,16,46,.8); }
+.project-body { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; padding: 1.4rem; }
+.project-body h3 { color: #fff; }
+.project-loc { color: #B9C5DD; }
+.scope li { background: rgba(255,255,255,.12); color: #fff; backdrop-filter: blur(6px); border-radius: 6px; }
+.project--total { background: linear-gradient(135deg, rgba(200,16,46,.28), rgba(10,19,40,.9)); border-color: rgba(255,90,110,.35); min-height: 0; display: grid; }
+
+/* Team */
+.team { background: var(--line); border-color: var(--line); border-radius: var(--radius); }
+.role { background: var(--bg-2); }
+.role p, .tools span { color: var(--text-mute); }
+.tools li { border-color: var(--line); background: var(--glass); border-radius: 12px; }
+
+/* Clients marquee */
+.clients-marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+.clients { display: flex; width: max-content; gap: 18px; animation: marquee 40s linear infinite; }
+.clients-marquee:hover .clients { animation-play-state: paused; }
+.clients li { width: 150px; flex: none; border-radius: 14px; border-color: transparent; background: #fff; }
+.clients img { filter: none; opacity: 1; }
+@keyframes marquee { to { transform: translateX(calc(-50% - 9px)); } }
+.coverage { color: var(--text-mute); }
+
+/* Contact */
+.engage li { border-top-color: var(--line); }
+.cline { border-top-color: var(--line); }
+form.enquiry { border-radius: 18px; box-shadow: 0 40px 90px -30px rgba(0,0,0,.9), 0 0 0 1px rgba(255,255,255,.06); }
+.prep { border-radius: var(--radius); }
+
+/* Footer */
+.site-footer { background: #040811; border-top: 1px solid var(--line); }
+.foot { border-bottom-color: var(--line); }
+
+/* WhatsApp glow */
+.wa-float { box-shadow: 0 14px 34px -10px rgba(37,211,102,.6); }
+
+@media (max-width: 1080px) {
+  .hero { min-height: 0; }
+  .hero-wall { width: 100%; opacity: .22; transform: rotate(-4deg) scale(1.25); -webkit-mask-image: none; mask-image: none; }
+  .scroll-cue { display: none; }
+  .numbers { margin-top: 0; }
+  .lifecycle .stage:nth-child(3) { border-top-color: var(--line); }
+}
+@media (max-width: 680px) {
+  .numbers ul { padding-inline: 1rem; }
+  .numbers li:nth-child(n+3) { border-top-color: var(--line); }
+  .numbers li:nth-child(n) { border-left-color: var(--line); }
+  .stat + .stat { border-top-color: var(--line); }
+  .lifecycle .stage + .stage { border-top-color: var(--line); }
+  .project { min-height: 360px; }
+  .team { background: none; border: 0; }
+  .role { border: 1px solid var(--line); border-radius: var(--radius); }
+  .clients li { width: 120px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wall-track, .clients, .scroll-cue::after { animation: none !important; }
+}
 </style>
 </head>
 <body>
@@ -539,7 +755,7 @@ dialog.wiz::backdrop { background: rgba(15,26,54,.72); backdrop-filter: blur(3px
 <header class="site-header">
   <div class="wrap">
     <nav class="nav" aria-label="Main">
-      <a class="brand" href="#top" aria-label="Red Ocean Consult home"><img src="assets/img/logo.svg" alt="Red Ocean Consult" width="378" height="266"></a>
+      <a class="brand" href="#top" aria-label="Red Ocean Consult home"><img src="assets/img/logo-white.svg" alt="Red Ocean Consult" width="378" height="266"></a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
@@ -570,15 +786,20 @@ dialog.wiz::backdrop { background: rgba(15,26,54,.72); backdrop-filter: blur(3px
 
 <!-- HERO -->
 <section class="hero" aria-labelledby="hero-title">
+  <div class="hero-wall" aria-hidden="true">
+    <div class="wall-col"><div class="wall-track"><img src="assets/img/project-kafd-2-14.jpg" alt="" width="300" height="400"><img src="assets/img/project-amazon-riyadh-front.jpg" alt="" width="300" height="400"><img src="assets/img/sector-commercial.jpg" alt="" width="300" height="400"><img src="assets/img/project-kafd-residence.jpg" alt="" width="300" height="400"><img src="assets/img/project-kafd-2-14.jpg" alt="" width="300" height="400"><img src="assets/img/project-amazon-riyadh-front.jpg" alt="" width="300" height="400"><img src="assets/img/sector-commercial.jpg" alt="" width="300" height="400"><img src="assets/img/project-kafd-residence.jpg" alt="" width="300" height="400"></div></div>
+    <div class="wall-col"><div class="wall-track"><img src="assets/img/project-shamla-pharma.jpg" alt="" width="300" height="400"><img src="assets/img/sector-infrastructure.jpg" alt="" width="300" height="400"><img src="assets/img/project-diriyah-vip.jpg" alt="" width="300" height="400"><img src="assets/img/project-events-investment-fund.jpg" alt="" width="300" height="400"><img src="assets/img/project-shamla-pharma.jpg" alt="" width="300" height="400"><img src="assets/img/sector-infrastructure.jpg" alt="" width="300" height="400"><img src="assets/img/project-diriyah-vip.jpg" alt="" width="300" height="400"><img src="assets/img/project-events-investment-fund.jpg" alt="" width="300" height="400"></div></div>
+    <div class="wall-col"><div class="wall-track"><img src="assets/img/sector-industrial.jpg" alt="" width="300" height="400"><img src="assets/img/project-bsf-takhasusi.jpg" alt="" width="300" height="400"><img src="assets/img/sector-hospitality.jpg" alt="" width="300" height="400"><img src="assets/img/quantum.jpg" alt="" width="300" height="400"><img src="assets/img/sector-industrial.jpg" alt="" width="300" height="400"><img src="assets/img/project-bsf-takhasusi.jpg" alt="" width="300" height="400"><img src="assets/img/sector-hospitality.jpg" alt="" width="300" height="400"><img src="assets/img/quantum.jpg" alt="" width="300" height="400"></div></div>
+  </div>
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <span class="label">Planning · Delay · Claims · Saudi Arabia</span>
       <h1 id="hero-title"><span>Every delay traced.</span><span>Every day recovered.</span></h1>
       <p class="lede">We protect contractors' rights when delays are caused by other parties. Primavera P6 baselines, forensic delay analysis, extension of time and quantum claims, from tender to final account.</p>
       <div class="hero-cta">
-        <a class="btn btn--red" href="#contact">Book a free consultation
+        <a class="btn btn--red" href="#order">Order online
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
-        <a class="btn btn--line" href="#services">Our services</a>
+        <a class="btn btn--line" href="#contact">Book a free consultation</a>
       </div>
       <p class="hero-meta">Facts first · method second · position third</p>
     </div>
@@ -668,6 +889,7 @@ dialog.wiz::backdrop { background: rgba(15,26,54,.72); backdrop-filter: blur(3px
       <figcaption class="programme-note">Illustrative example. Dashed outline = approved baseline · solid = as-built / forecast · hatched = employer delay.</figcaption>
     </figure>
   </div>
+  <a class="scroll-cue" href="#about">Scroll</a>
 </section>
 
 <!-- NUMBERS -->
@@ -742,7 +964,7 @@ dialog.wiz::backdrop { background: rgba(15,26,54,.72); backdrop-filter: blur(3px
     <p class="research-note">These are separate studies with different samples and dates, not one market forecast. When delay originates with the employer, an approved programme and records are what turn it into recoverable time and cost.</p>
 
     <div class="pa">
-      <article class="pa-card">
+      <article class="pa-card spot">
         <div class="pa-problem">
           <span class="mono">Hurdle 1</span>
           <h3>No approved baseline</h3>
@@ -758,7 +980,7 @@ dialog.wiz::backdrop { background: rgba(15,26,54,.72); backdrop-filter: blur(3px
           </ul>
         </div>
       </article>
-      <article class="pa-card">
+      <article class="pa-card spot">
         <div class="pa-problem">
           <span class="mono">Hurdle 2</span>
           <h3>No contemporaneous records</h3>
@@ -774,7 +996,7 @@ dialog.wiz::backdrop { background: rgba(15,26,54,.72); backdrop-filter: blur(3px
           </ul>
         </div>
       </article>
-      <article class="pa-card">
+      <article class="pa-card spot">
         <div class="pa-problem">
           <span class="mono">Hurdle 3</span>
           <h3>No official letters or notices</h3>
@@ -804,19 +1026,19 @@ dialog.wiz::backdrop { background: rgba(15,26,54,.72); backdrop-filter: blur(3px
       <p class="lede">Our support follows the project through every stage, so the same story holds from the first programme to the hearing room.</p>
     </div>
     <div class="lifecycle">
-      <div class="stage">
+      <div class="stage spot">
         <div class="stage-head"><span class="mono">Stage 1</span><h3>Tender to plan</h3></div>
         <div class="svc"><h4>Tender preparation</h4><p>Tender documents, method statement, tender programme, clarifications log and a final compliance check.</p></div>
         <div class="svc"><h4>Quantity takeoff</h4><p>Digital measurement in PlanSwift and organised Excel schedules for pricing and variations.</p></div>
         <div class="svc"><h4>Baseline programme</h4><p>Primavera P6 baseline built on contract review and approved by the consultant first time.</p><button class="svc-order" type="button" data-order="baseline">Order online</button></div>
       </div>
-      <div class="stage">
+      <div class="stage spot">
         <div class="stage-head"><span class="mono">Stage 2</span><h3>Control to claim</h3></div>
         <div class="svc"><h4>Progress reporting</h4><p>Schedule updates, Excel and Power BI dashboards, S-curves, and SPI and CPI each period.</p></div>
         <div class="svc"><h4>Delay analysis</h4><p>Windows analysis, time impact analysis or as-planned versus as-built, chosen by the evidence.</p></div>
         <div class="svc"><h4>Extension of time claims</h4><p>Notices, a clear chronology, causation analysis and expert support for each EOT claim.</p><button class="svc-order" type="button" data-order="eot">Order online</button></div>
       </div>
-      <div class="stage">
+      <div class="stage spot">
         <div class="stage-head"><span class="mono">Stage 3</span><h3>Negotiate to arbitration</h3></div>
         <div class="svc"><h4>Quantum claims</h4><p>Cost heads built from records into a schedule that can be audited line by line.</p><button class="svc-order" type="button" data-order="quantum">Order online</button></div>
         <div class="svc"><h4>Dispute avoidance</h4><p>Early notices, contemporaneous records, time-bar tracking and negotiation-ready claim packages.</p></div>
@@ -840,21 +1062,21 @@ dialog.wiz::backdrop { background: rgba(15,26,54,.72); backdrop-filter: blur(3px
       <p class="lede">Choose the deliverables you need, tell us about the project, and see a full priced quotation straight away. Approve it and pay online to get started.</p>
     </div>
     <div class="order-grid">
-      <article class="pkg">
+      <article class="pkg spot">
         <span class="mono">Planning</span>
         <h3>Baseline Programme</h3>
         <p>A Primavera P6 baseline built on contract review and approved by the consultant.</p>
         <ul class="ticks"><li>Primavera P6 baseline schedule</li><li>Cost and manpower loading</li><li>Schedule narrative and BOQ mapping</li></ul>
         <div class="pkg-foot"><span class="pkg-from"><small>From</small><b data-from="baseline">SAR 7,000</b></span><button class="btn btn--red" type="button" data-order="baseline">Order online</button></div>
       </article>
-      <article class="pkg">
+      <article class="pkg spot">
         <span class="mono">Delay &amp; time</span>
         <h3>EOT Claim</h3>
         <p>Forensic delay analysis and a complete extension of time submission.</p>
         <ul class="ticks"><li>Detailed time impact analysis</li><li>Or a general impacted as-planned analysis</li><li>EOT report linked to the critical path</li></ul>
         <div class="pkg-foot"><span class="pkg-from"><small>From</small><b data-from="eot">SAR 5,000</b></span><button class="btn btn--red" type="button" data-order="eot">Order online</button></div>
       </article>
-      <article class="pkg">
+      <article class="pkg spot">
         <span class="mono">Cost</span>
         <h3>Quantum Claim</h3>
         <p>Cost heads built from your records into an auditable claim schedule.</p>
@@ -895,19 +1117,19 @@ dialog.wiz::backdrop { background: rgba(15,26,54,.72); backdrop-filter: blur(3px
         <h3 class="mono" style="font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);margin-bottom:1rem">Methods we use</h3>
         <div class="methods">
           <div class="method">
-            <svg viewBox="0 0 64 40" aria-hidden="true"><rect x="2" y="8" width="34" height="6" fill="none" stroke="#56617A" stroke-dasharray="3 2"/><rect x="2" y="22" width="46" height="8" fill="#16244A"/><rect x="36" y="22" width="12" height="8" fill="#C8102E"/></svg>
+            <svg viewBox="0 0 64 40" aria-hidden="true"><rect x="2" y="8" width="34" height="6" fill="none" stroke="#7F8CAA" stroke-dasharray="3 2"/><rect x="2" y="22" width="46" height="8" fill="#DDE4F0"/><rect x="36" y="22" width="12" height="8" fill="#C8102E"/></svg>
             <div><h4>As-planned vs as-built</h4><p>Compares the baseline with actual progress to show where slippage arose. Suited to simpler projects or limited records.</p></div>
           </div>
           <div class="method">
-            <svg viewBox="0 0 64 40" aria-hidden="true"><rect x="2" y="8" width="24" height="8" fill="#16244A"/><rect x="26" y="8" width="10" height="8" fill="#C8102E"/><rect x="36" y="24" width="26" height="8" fill="#16244A"/><path d="M36 16v8" stroke="#C8102E"/></svg>
+            <svg viewBox="0 0 64 40" aria-hidden="true"><rect x="2" y="8" width="24" height="8" fill="#DDE4F0"/><rect x="26" y="8" width="10" height="8" fill="#C8102E"/><rect x="36" y="24" width="26" height="8" fill="#DDE4F0"/><path d="M36 16v8" stroke="#C8102E"/></svg>
             <div><h4>Impacted as-planned</h4><p>Inserts delay events into the baseline to model their effect. Useful when updates are not available, with its limits stated.</p></div>
           </div>
           <div class="method">
-            <svg viewBox="0 0 64 40" aria-hidden="true"><path d="M20 4v32M40 4v32" stroke="#56617A" stroke-dasharray="2 2"/><rect x="2" y="10" width="20" height="7" fill="#16244A"/><rect x="22" y="10" width="8" height="7" fill="#C8102E"/><rect x="30" y="23" width="30" height="7" fill="#16244A"/></svg>
+            <svg viewBox="0 0 64 40" aria-hidden="true"><path d="M20 4v32M40 4v32" stroke="#7F8CAA" stroke-dasharray="2 2"/><rect x="2" y="10" width="20" height="7" fill="#DDE4F0"/><rect x="22" y="10" width="8" height="7" fill="#C8102E"/><rect x="30" y="23" width="30" height="7" fill="#DDE4F0"/></svg>
             <div><h4>Time impact analysis</h4><p>Inserts each event into the programme as it stood at the time, update by update, to measure its effect on the critical path.</p></div>
           </div>
           <div class="method">
-            <svg viewBox="0 0 64 40" aria-hidden="true"><rect x="2" y="4" width="18" height="32" fill="#EEF1F6" stroke="#DCE1EA"/><rect x="23" y="4" width="18" height="32" fill="#FCEBEE" stroke="#C8102E"/><rect x="44" y="4" width="18" height="32" fill="#EEF1F6" stroke="#DCE1EA"/><path d="M4 28 L18 24 L26 22 L39 14 L46 12 L60 8" stroke="#16244A" stroke-width="2" fill="none"/></svg>
+            <svg viewBox="0 0 64 40" aria-hidden="true"><rect x="2" y="4" width="18" height="32" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.2)"/><rect x="23" y="4" width="18" height="32" fill="rgba(255,90,110,.18)" stroke="#C8102E"/><rect x="44" y="4" width="18" height="32" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.2)"/><path d="M4 28 L18 24 L26 22 L39 14 L46 12 L60 8" stroke="#DDE4F0" stroke-width="2" fill="none"/></svg>
             <div><h4>Windows analysis</h4><p>Divides the project into time windows and examines how the critical path shifted in each. Well suited to projects with regular updates.</p></div>
           </div>
         </div>
@@ -923,7 +1145,7 @@ dialog.wiz::backdrop { background: rgba(15,26,54,.72); backdrop-filter: blur(3px
     </div>
 
     <div class="receive">
-      <div class="receive-box">
+      <div class="receive-box spot">
         <h3>What you receive</h3>
         <ul class="ticks">
           <li>A clear chronology</li>
@@ -988,7 +1210,7 @@ dialog.wiz::backdrop { background: rgba(15,26,54,.72); backdrop-filter: blur(3px
       <p class="lede">A tender is won on credibility and lost on gaps. We help contractors submit bids that are complete, compliant and deliverable, with quantities that hold up through variations and claims.</p>
     </div>
     <div class="pre">
-      <article class="pre-card">
+      <article class="pre-card spot">
         <img src="assets/img/tender.jpg" alt="Tender documents, drawings and a laptop on a desk" loading="lazy" width="1035" height="583">
         <div class="pre-body">
           <h3>Tender preparation</h3>
@@ -1002,7 +1224,7 @@ dialog.wiz::backdrop { background: rgba(15,26,54,.72); backdrop-filter: blur(3px
           <p class="callout">After award, the tender programme becomes the starting point for the approved baseline, so the bid and the project start from the same plan.</p>
         </div>
       </article>
-      <article class="pre-card">
+      <article class="pre-card spot">
         <img src="assets/img/meeting.jpg" alt="Project team reviewing quantities together" loading="lazy" width="1200" height="366">
         <div class="pre-body">
           <h3>Quantity takeoff</h3>
@@ -1112,32 +1334,32 @@ dialog.wiz::backdrop { background: rgba(15,26,54,.72); backdrop-filter: blur(3px
       <p class="lede">Each engagement is led by an Operations Manager and staffed by the specialists your programme, claim or tender actually needs.</p>
     </div>
     <div class="team">
-      <div class="role">
+      <div class="role spot">
         <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="13" cy="13" r="8"/><path d="M19 19l7 7"/><path d="M9 14h3l2-4 2 6 1-2h1"/></svg>
         <h3>Forensic Schedule Analysts</h3>
         <p>Reconstruct what happened from programmes and records, test which events moved completion, and separate excusable, compensable and concurrent delay.</p>
       </div>
-      <div class="role">
+      <div class="role spot">
         <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h10M8 13h14M12 19h12M6 25h8"/></svg>
         <h3>Senior Planning Engineers</h3>
         <p>Develop baselines, WBS and logic, load resources and issue updates and variance narratives, warning early when float is eroding.</p>
       </div>
-      <div class="role">
+      <div class="role spot">
         <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="4" width="20" height="22" rx="1"/><path d="M9 9h12M9 14h5M9 18h5M9 22h5M18 14h3M18 18h3M18 22h3"/></svg>
         <h3>Quantum Claims Specialists</h3>
         <p>Put a figure on delay and disruption, building rates from the contractor's own records into claims that can be audited line by line.</p>
       </div>
-      <div class="role">
+      <div class="role spot">
         <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 4h12l5 5v17H7z"/><path d="M19 4v5h5M11 15l3 3 6-6"/></svg>
         <h3>Tendering Specialists</h3>
         <p>Review tender documents and risks, prepare method statements and tender programmes, and check compliance before submission.</p>
       </div>
-      <div class="role">
+      <div class="role spot">
         <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 26L26 4"/><path d="M4 26l3-1M8 22l2 2M12 18l2 2M16 14l2 2M20 10l2 2"/></svg>
         <h3>Quantity Takeoff Specialists</h3>
         <p>Measure quantities from drawings and specifications in PlanSwift, producing checkable schedules tied to the bill of quantities.</p>
       </div>
-      <div class="role">
+      <div class="role spot">
         <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 8h9l2 3h11v14H4z"/><path d="M10 18h10"/></svg>
         <h3>Document Controller</h3>
         <p>Keeps contract documents, notices, drawings and records indexed and time-stamped, and tracks notice and time-bar deadlines.</p>
@@ -1160,6 +1382,7 @@ dialog.wiz::backdrop { background: rgba(15,26,54,.72); backdrop-filter: blur(3px
       <span class="label">Clients &amp; coverage</span>
       <h2 class="h2" id="clients-title">Trusted by contractors <em>across Saudi Arabia</em></h2>
     </div>
+    <div class="clients-marquee">
     <ul class="clients">
       <li><img src="assets/clients/iworks.png" alt="iWorks" loading="lazy" width="162" height="162"></li>
       <li><img src="assets/clients/inma.png" alt="INMA Factory Company" loading="lazy" width="162" height="162"></li>
@@ -1170,6 +1393,7 @@ dialog.wiz::backdrop { background: rgba(15,26,54,.72); backdrop-filter: blur(3px
       <li><img src="assets/clients/ssf.png" alt="SSF" loading="lazy" width="162" height="165"></li>
       <li><img src="assets/clients/idw-innovative.png" alt="IDW Innovative" loading="lazy" width="162" height="165"></li>
     </ul>
+    </div>
     <p class="coverage"><span>Offices and coverage: all over Saudi Arabia</span><span>Riyadh · Diriyah · Al Madinah · nationwide</span></p>
   </div>
 </section>
@@ -1323,6 +1547,33 @@ dialog.wiz::backdrop { background: rgba(15,26,54,.72); backdrop-filter: blur(3px
 <script>
 (function () {
   document.getElementById('year').textContent = new Date().getFullYear();
+
+
+  // Cursor spotlight on glass cards
+  document.addEventListener('pointermove', function (e) {
+    var el = e.target.closest && e.target.closest('.spot'); if (!el) return;
+    var r = el.getBoundingClientRect();
+    el.style.setProperty('--mx', (e.clientX - r.left) + 'px'); el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  });
+
+  // Clients marquee: duplicate the logos for a seamless loop
+  var cl = document.querySelector('.clients');
+  if (cl) Array.prototype.slice.call(cl.children).forEach(function (li) { var c = li.cloneNode(true); c.setAttribute('aria-hidden', 'true'); cl.appendChild(c); });
+
+  // Count-up numbers when they come into view
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var counter = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return; counter.unobserve(en.target);
+        var node = Array.prototype.filter.call(en.target.childNodes, function (n) { return n.nodeType === 3 && /\d/.test(n.nodeValue); })[0];
+        if (!node) return;
+        var m = node.nodeValue.match(/(\d+)/), end = +m[1], t0 = null, pre = node.nodeValue.slice(0, m.index), post = node.nodeValue.slice(m.index + m[1].length);
+        var step = function (t) { t0 = t0 || t; var k = Math.min(1, (t - t0) / 1400); node.nodeValue = pre + Math.round(end * (1 - Math.pow(1 - k, 3))) + post; if (k < 1) requestAnimationFrame(step); };
+        requestAnimationFrame(step);
+      });
+    }, { threshold: .6 });
+    document.querySelectorAll('.numbers b, .stat b').forEach(function (b) { counter.observe(b); });
+  }
 
   // Header shadow + current section in the menu
   var header = document.querySelector('.site-header');
