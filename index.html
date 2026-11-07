@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Red Ocean Consult</title>
+<title>Red Ocean Consult | Every delay traced. Every day recovered.</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Red Ocean Consult provides construction planning, Primavera P6 baselines, forensic delay analysis, extension of time and quantum claims, tender support and arbitration expert services across Saudi Arabia.">
+<meta name="description" content="Construction planning, Primavera P6 baselines, forensic delay analysis, EOT and quantum claims, tender support and arbitration expert services across Saudi Arabia.">
 <meta property="og:title" content="Red Ocean Consult | Every delay traced. Every day recovered.">
-<meta property="og:description" content="Planning, delay analysis, EOT and quantum claims for contractors and project managers across Saudi Arabia.">
+<meta property="og:description" content="Construction planning, Primavera P6 baselines, forensic delay analysis, EOT and quantum claims, tender support and arbitration expert services across Saudi Arabia.">
 <meta property="og:url" content="https://www.redoceanconsult.com/">
 <meta property="og:image" content="https://www.redoceanconsult.com/assets/img/project-kafd-2-14.jpg">
 <meta property="og:type" content="website">
@@ -22,769 +22,43 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService","name":"Red Ocean Consult","url":"https://www.redoceanconsult.com","logo":"https://www.redoceanconsult.com/assets/img/logo.png","slogan":"Every delay traced. Every day recovered.","foundingDate":"2019","email":"saadsr@redoceanconsult.com","telephone":["+966582907870","+966500509776"],"areaServed":"Saudi Arabia","sameAs":["https://wa.me/966582907870"],"address":{"@type":"PostalAddress","streetAddress":"Building 8323, Ahmad Bin Ubayd Street 4788, Al Khalidiyah Dist.","postalCode":"42317","addressLocality":"Al Madinah Al Munawwarah","addressCountry":"SA"}}
 </script>
-<style>
-/* Layout: a construction programme. Navy "programme" bands carry the Gantt signature; white and paper bands carry the evidence. Crimson marks delay, notices and the critical path. */
-:root {
-  --navy: #16244A;
-  --navy-deep: #0F1A36;
-  --crimson: #C8102E;
-  --crimson-dark: #A20D25;
-  --paper: #F3F5F9;
-  --white: #FFFFFF;
-  --ink: #141C2E;
-  --slate: #56617A;
-  --rule: #DCE1EA;
-  --rule-dark: rgba(255,255,255,.14);
-  --on-navy: #EEF2FA;
-  --on-navy-mute: #A3AFCB;
-
-  --f-display: "Barlow Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
-  --f-ui: "Barlow", "Segoe UI", system-ui, -apple-system, sans-serif;
-  --f-read: "Source Serif 4", Georgia, "Times New Roman", serif;
-  --f-data: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
-
-  --s-hero: clamp(3rem, 7vw, 5.6rem);
-  --s-h2: clamp(2.2rem, 4.4vw, 3.5rem);
-  --s-h3: 1.45rem;
-  --s-label: .74rem;
-
-  --wrap: 1200px;
-  --r: 3px;
-  color-scheme: light;
-}
-*,*::before,*::after { box-sizing: border-box; }
-[hidden] { display: none !important; }
-html { scroll-behavior: smooth; scroll-padding-top: 92px; }
-body {
-  margin: 0; background: var(--white); color: var(--ink);
-  font-family: var(--f-ui); font-size: 1.0625rem; line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--white); }
-img { max-width: 100%; height: auto; display: block; }
-svg { max-width: 100%; }
-a { color: inherit; }
-h1, h2, h3, h4 { margin: 0; text-wrap: balance; }
-p { margin: 0; }
-ul, ol { margin: 0; padding: 0; }
-:focus-visible { outline: 2px solid var(--crimson); outline-offset: 3px; }
-
-.wrap { max-width: var(--wrap); margin-inline: auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
-.band { padding-block: clamp(4.5rem, 9vw, 7.5rem); }
-.band--paper { background: var(--paper); }
-.band--navy { background: var(--navy); color: var(--on-navy); }
-
-.label { font-family: var(--f-display); font-weight: 600; font-size: .9rem; letter-spacing: .16em; text-transform: uppercase; color: var(--crimson); display: inline-flex; align-items: center; gap: .65rem; }
-.label::before { content: ""; width: 10px; height: 10px; background: currentColor; transform: rotate(45deg); flex: none; }
-.band--navy .label { color: #FF5A6E; }
-.h2 { font-family: var(--f-display); font-weight: 700; font-size: var(--s-h2); line-height: 1; letter-spacing: -.005em; text-transform: uppercase; }
-.h2 em { font-style: normal; color: var(--crimson); }
-.band--navy .h2 em { color: #FF5A6E; }
-.lede { font-family: var(--f-read); font-size: 1.15rem; line-height: 1.6; color: var(--slate); max-width: 62ch; }
-.band--navy .lede { color: var(--on-navy-mute); }
-.head { display: grid; gap: 1.1rem; max-width: 780px; margin-bottom: clamp(2.5rem, 5vw, 3.75rem); }
-.mono { font-family: var(--f-data); }
-
-.btn { display: inline-flex; align-items: center; gap: .6rem; padding: .95rem 1.5rem; font: 600 1rem/1 var(--f-display); letter-spacing: .1em; text-transform: uppercase; text-decoration: none; border: 1px solid transparent; border-radius: var(--r); cursor: pointer; transition: background .2s, color .2s, border-color .2s; }
-.btn svg { width: 16px; height: 16px; transition: transform .2s; }
-.btn:hover svg { transform: translateX(3px); }
-.btn--red { background: var(--crimson); color: var(--white); }
-.btn--red:hover { background: var(--crimson-dark); }
-.btn--line { border-color: rgba(255,255,255,.4); color: var(--on-navy); }
-.btn--line:hover { border-color: var(--white); background: rgba(255,255,255,.06); }
-
-/* Header */
-.site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: rgba(255,255,255,.94); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--rule); }
-.nav { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; height: 84px; }
-.brand img { height: 66px; width: auto; }
-.nav-links { display: flex; gap: 1.8rem; list-style: none; }
-.nav-links a { text-decoration: none; font: 600 .98rem var(--f-display); letter-spacing: .1em; text-transform: uppercase; color: var(--slate); transition: color .2s; }
-.nav-links a:hover, .nav-links a.active { color: var(--crimson); }
-.site-header { transition: box-shadow .3s; }
-.site-header.scrolled { box-shadow: 0 8px 28px -14px rgba(22,36,74,.35); }
-.nav .btn { padding: .75rem 1.1rem; font-size: .9rem; }
-.menu-btn { display: none; background: none; border: 0; color: var(--navy); padding: .5rem; cursor: pointer; }
-.menu-btn svg { width: 28px; height: 28px; }
-.mobile-menu { display: none; padding-bottom: 1rem; }
-.mobile-menu a { padding-block: .85rem; border-top: 1px solid var(--rule); text-decoration: none; font: 600 1.05rem var(--f-display); letter-spacing: .1em; text-transform: uppercase; }
-.mobile-menu .btn { margin-top: .8rem; justify-content: center; }
-
-/* Hero */
-.hero { background: var(--navy); color: var(--on-navy); position: relative; overflow: hidden; }
-.hero::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(var(--rule-dark) 1px, transparent 1px), linear-gradient(90deg, var(--rule-dark) 1px, transparent 1px); background-size: 48px 48px; opacity: .35; mask-image: linear-gradient(90deg, transparent, #000 60%); -webkit-mask-image: linear-gradient(90deg, transparent, #000 60%); pointer-events: none; }
-.hero-grid { position: relative; display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.2fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; padding-block: clamp(3.5rem, 8vw, 6.5rem); }
-.hero-copy { display: grid; gap: 1.6rem; }
-.hero h1 { font-family: var(--f-display); font-weight: 700; font-size: var(--s-hero); line-height: .92; text-transform: uppercase; letter-spacing: -.01em; }
-.hero h1 span { display: block; }
-.hero h1 span + span { color: #FF5A6E; }
-.hero .lede { color: var(--on-navy-mute); font-size: 1.2rem; }
-.hero-cta { display: flex; flex-wrap: wrap; gap: .8rem; }
-.hero-meta { font-family: var(--f-data); font-size: .78rem; color: var(--on-navy-mute); letter-spacing: .04em; }
-
-/* Gantt signature */
-.programme { margin: 0; background: var(--navy-deep); border: 1px solid var(--rule-dark); border-radius: 6px; padding: 1rem 1rem .9rem; box-shadow: 0 30px 60px -30px rgba(0,0,0,.6); min-width: 0; }
-.programme-top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .1rem .3rem .8rem; border-bottom: 1px solid var(--rule-dark); font-family: var(--f-data); font-size: .72rem; color: var(--on-navy-mute); flex-wrap: wrap; }
-.programme-top b { color: var(--on-navy); font-weight: 500; }
-.dots { display: flex; gap: 6px; }
-.dots i { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,.18); }
-.dots i:first-child { background: var(--crimson); }
-.gantt { display: block; width: 100%; height: auto; margin-top: .6rem; }
-.gantt text { font-family: var(--f-data); }
-.gantt .lbl { font-size: 10.5px; fill: #C9D2E6; }
-.gantt .tick { font-size: 9px; fill: #7F8CAA; }
-.gantt .tag { font-size: 9px; fill: #FF7083; font-weight: 500; }
-.gantt .base { fill: none; stroke: rgba(255,255,255,.42); stroke-width: 1; stroke-dasharray: 3 2; }
-.gantt .act { fill: #E6ECF8; }
-.gantt .act--nc { fill: #6E7DA0; }
-.gantt .crit { stroke: #FF5A6E; stroke-width: 1.2; fill: none; }
-.gantt .grow { transform-box: fill-box; transform-origin: left center; animation: grow 1s cubic-bezier(.3,.7,.2,1) both; }
-.gantt .fade { animation: fade .8s ease both; }
-@keyframes grow { from { transform: scaleX(0); } to { transform: none; } }
-@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
-.readout { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); border-top: 1px solid var(--rule-dark); margin-top: .5rem; }
-.readout div { padding: .8rem .3rem .2rem; display: grid; gap: .15rem; }
-.readout div + div { border-left: 1px solid var(--rule-dark); padding-left: .9rem; }
-.readout dt { font-family: var(--f-data); font-size: .66rem; letter-spacing: .08em; text-transform: uppercase; color: var(--on-navy-mute); }
-.readout dd { margin: 0; font: 700 1.35rem/1.1 var(--f-display); color: var(--on-navy); }
-.readout dd.red { color: #FF5A6E; }
-.programme-note { font-family: var(--f-data); font-size: .66rem; color: #7F8CAA; padding: .5rem .3rem 0; }
-
-/* Numbers */
-.numbers { background: var(--navy-deep); color: var(--on-navy); }
-.numbers ul { list-style: none; display: grid; grid-template-columns: repeat(6, minmax(0,1fr)); }
-.numbers li { padding: 1.8rem 1.2rem 1.8rem 0; display: grid; gap: .3rem; align-content: start; }
-.numbers li + li { padding-left: 1.2rem; border-left: 1px solid var(--rule-dark); }
-.numbers b { font: 700 clamp(2.2rem, 3.6vw, 3rem)/1 var(--f-display); font-variant-numeric: tabular-nums; }
-.numbers b small { font-size: .55em; margin-right: .15em; }
-.numbers b sup { color: #FF5A6E; font-size: .6em; vertical-align: .55em; }
-.numbers span { font-size: .9rem; color: var(--on-navy-mute); line-height: 1.35; }
-
-/* Story */
-.story { display: grid; grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); gap: clamp(2.5rem, 6vw, 5.5rem); align-items: start; }
-.story-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; position: sticky; top: 110px; }
-.story-photos img { width: 100%; aspect-ratio: 3/5; object-fit: cover; border-radius: var(--r); }
-.story-photos img:last-child { margin-top: 3.5rem; }
-.story-copy { display: grid; gap: 1.4rem; }
-.story-copy .prose { display: grid; gap: 1.1rem; font-family: var(--f-read); font-size: 1.1rem; color: #2C3550; max-width: 62ch; }
-.pull { font: 600 clamp(1.5rem, 2.6vw, 2rem)/1.15 var(--f-display); text-transform: uppercase; color: var(--navy); border-left: 4px solid var(--crimson); padding: .2rem 0 .2rem 1.2rem; letter-spacing: .01em; }
-.mission { background: var(--crimson); color: var(--white); padding: clamp(1.5rem, 3vw, 2.2rem); border-radius: var(--r); display: grid; gap: 1.2rem; margin-top: .6rem; }
-.mission h3 { font: 600 .9rem var(--f-display); letter-spacing: .16em; text-transform: uppercase; opacity: .85; }
-.mission > p { font-family: var(--f-read); font-size: 1.2rem; line-height: 1.5; }
-.values { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem 1.6rem; border-top: 1px solid rgba(255,255,255,.3); padding-top: 1.2rem; list-style: none; }
-.values b { display: block; font: 700 1.15rem var(--f-display); letter-spacing: .06em; text-transform: uppercase; }
-.values span { font-size: .93rem; opacity: .9; }
-
-/* Research */
-.research { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 0; border-top: 2px solid var(--navy); }
-.stat { padding: 1.8rem 1.6rem 1.8rem 0; display: grid; gap: .8rem; align-content: start; }
-.stat + .stat { padding-left: 1.6rem; border-left: 1px solid var(--rule); }
-.stat b { font: 700 clamp(3rem, 6vw, 4.6rem)/.9 var(--f-display); color: var(--crimson); font-variant-numeric: tabular-nums; }
-.stat p { font-family: var(--f-read); color: #2C3550; }
-.stat cite { font-family: var(--f-data); font-style: normal; font-size: .72rem; color: var(--slate); line-height: 1.5; }
-.research-note { margin-top: 1.4rem; font-size: .88rem; color: var(--slate); max-width: 80ch; }
-
-/* Problem → answer */
-.pa { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; margin-top: clamp(3rem, 6vw, 4.5rem); }
-.pa-card { background: var(--white); border: 1px solid var(--rule); border-radius: var(--r); display: grid; grid-template-rows: auto 1fr; overflow: hidden; }
-.pa-problem { padding: 1.5rem 1.5rem 1.3rem; display: grid; gap: .5rem; border-bottom: 1px dashed var(--rule); }
-.pa-problem .mono { font-size: .72rem; color: var(--crimson); letter-spacing: .08em; text-transform: uppercase; }
-.pa-problem h3 { font: 700 1.6rem/1.05 var(--f-display); text-transform: uppercase; }
-.pa-problem p { font-size: .95rem; color: var(--slate); }
-.pa-answer { padding: 1.3rem 1.5rem 1.6rem; background: linear-gradient(180deg, #F8F9FC, var(--white)); display: grid; gap: .8rem; align-content: start; }
-.pa-answer h4 { font: 700 1.05rem var(--f-display); letter-spacing: .08em; text-transform: uppercase; color: var(--navy); display: flex; align-items: center; gap: .5rem; }
-.pa-answer h4 svg { width: 18px; height: 18px; color: var(--crimson); flex: none; }
-.ticks { list-style: none; display: grid; gap: .5rem; font-size: .95rem; }
-.ticks li { padding-left: 1.3rem; position: relative; }
-.ticks li::before { content: ""; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; border: 2px solid var(--crimson); transform: rotate(45deg); }
-.motto { margin-top: 2rem; text-align: center; font: 600 1.15rem var(--f-display); letter-spacing: .18em; text-transform: uppercase; color: var(--navy); }
-
-/* Lifecycle */
-.lifecycle { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 0; border: 1px solid var(--rule-dark); border-radius: var(--r); }
-.stage { padding: 1.6rem 1.6rem 2rem; display: grid; gap: 1.5rem; align-content: start; min-width: 0; }
-.stage + .stage { border-left: 1px solid var(--rule-dark); }
-.stage-head { display: grid; gap: .3rem; padding-bottom: 1.1rem; border-bottom: 3px solid #FF5A6E; }
-.stage-head .mono { font-size: .72rem; letter-spacing: .1em; color: var(--on-navy-mute); text-transform: uppercase; }
-.stage-head h3 { font: 700 1.7rem/1 var(--f-display); text-transform: uppercase; }
-.svc { display: grid; gap: .35rem; }
-.svc h4 { font: 600 1.15rem var(--f-display); letter-spacing: .06em; text-transform: uppercase; color: var(--white); }
-.svc p { font-size: .95rem; color: var(--on-navy-mute); }
-.roles-line { margin-top: 1.8rem; font-size: .92rem; color: var(--on-navy-mute); max-width: 90ch; }
-.roles-line b { color: var(--on-navy); font-weight: 500; }
-.why3 { margin-top: 2.2rem; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; list-style: none; }
-.why3 li { border-top: 1px solid var(--rule-dark); padding-top: 1rem; font: 600 1.2rem/1.2 var(--f-display); text-transform: uppercase; letter-spacing: .03em; }
-
-/* Delay analysis */
-.split { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
-.steps6 { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
-.steps6 li { background: var(--white); padding: 1.3rem 1.3rem 1.5rem; display: grid; gap: .4rem; align-content: start; }
-.steps6 .mono { font-size: .75rem; color: var(--crimson); }
-.steps6 h4 { font: 700 1.25rem var(--f-display); text-transform: uppercase; letter-spacing: .03em; }
-.steps6 p { font-size: .93rem; color: var(--slate); }
-.methods { display: grid; gap: 0; }
-.method { display: grid; grid-template-columns: 64px minmax(0,1fr); gap: 1rem; padding-block: 1.1rem; border-bottom: 1px solid var(--rule); }
-.method:first-child { border-top: 2px solid var(--navy); }
-.method svg { width: 64px; height: 40px; }
-.method h4 { font: 700 1.25rem var(--f-display); text-transform: uppercase; letter-spacing: .03em; margin-bottom: .2rem; }
-.method p { font-size: .95rem; color: var(--slate); }
-.dtypes { margin-top: 2.5rem; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px; }
-.dtype { padding: 1rem 1.1rem; border-radius: var(--r); border: 1px solid var(--rule); background: var(--white); display: grid; gap: .25rem; }
-.dtype b { font: 700 1.1rem/1.1 var(--f-display); text-transform: uppercase; letter-spacing: .03em; }
-.dtype span { font-size: .88rem; color: var(--slate); }
-.dtype--tc { border-color: var(--crimson); background: #FFF5F6; }
-.dtype--tc b { color: var(--crimson); }
-.receive { margin-top: 2.5rem; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.2fr); gap: 20px; align-items: stretch; }
-.receive-box { padding: 1.6rem; border: 1px solid var(--rule); border-radius: var(--r); background: var(--white); display: grid; gap: .9rem; align-content: start; }
-.receive-box h3 { font: 700 1.3rem var(--f-display); text-transform: uppercase; letter-spacing: .04em; }
-.note-red { background: var(--crimson); color: var(--white); padding: 1.6rem; border-radius: var(--r); font-family: var(--f-read); font-size: 1.1rem; line-height: 1.55; display: grid; align-content: center; }
-
-/* Claim to hearing */
-.feature { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
-.feature + .feature { margin-top: clamp(4rem, 8vw, 6rem); }
-.feature img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--r); }
-.feature--flip > :first-child { order: 2; }
-.feature-copy { display: grid; gap: 1.3rem; min-width: 0; }
-.flow { list-style: none; display: grid; gap: 0; counter-reset: f; }
-.flow li { counter-increment: f; display: grid; grid-template-columns: 2.6rem minmax(0,1fr); gap: .8rem; padding-block: .75rem; border-bottom: 1px solid var(--rule); font-size: .98rem; }
-.flow li::before { content: counter(f, decimal-leading-zero); font-family: var(--f-data); font-size: .8rem; color: var(--crimson); padding-top: .15rem; }
-.flow b { font-weight: 600; }
-.chips { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; }
-.chips li { font-family: var(--f-data); font-size: .76rem; padding: .35rem .7rem; border: 1px solid var(--rule); border-radius: 999px; background: var(--white); }
-
-/* Pre-contract */
-.pre { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 24px; }
-.pre-card { background: var(--white); border: 1px solid var(--rule); border-radius: var(--r); overflow: hidden; display: grid; grid-template-rows: auto 1fr; }
-.pre-card img { width: 100%; aspect-ratio: 16/8; object-fit: cover; }
-.pre-body { padding: 1.6rem 1.7rem 1.9rem; display: grid; gap: 1rem; align-content: start; }
-.pre-body h3 { font: 700 1.9rem/1 var(--f-display); text-transform: uppercase; }
-.pre-body > p { font-family: var(--f-read); color: #2C3550; }
-.pre-body .flow li { font-size: .95rem; }
-.pre-body > p.callout { margin-top: .4rem; font-family: var(--f-ui); padding: .9rem 1.1rem; background: var(--navy); color: var(--on-navy); border-radius: var(--r); font-size: .93rem; }
-
-/* Projects */
-.sectors { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px; margin-bottom: clamp(3rem, 6vw, 4.5rem); }
-.sector { position: relative; border-radius: var(--r); overflow: hidden; aspect-ratio: 4/3; max-width: 100%; }
-.sector img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
-.sector:hover img { transform: scale(1.05); }
-.sector span { position: absolute; left: 0; right: 0; bottom: 0; padding: 2.2rem .9rem .75rem; background: linear-gradient(transparent, rgba(15,26,54,.9)); color: var(--white); font: 700 1.2rem var(--f-display); text-transform: uppercase; letter-spacing: .06em; }
-.projects { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 24px; }
-.project { display: grid; grid-template-rows: auto 1fr; background: var(--white); border: 1px solid var(--rule); border-radius: var(--r); overflow: hidden; transition: box-shadow .25s, transform .25s; }
-.project:hover { box-shadow: 0 18px 40px -22px rgba(22,36,74,.45); transform: translateY(-3px); }
-.project-img { position: relative; aspect-ratio: 16/10; max-width: 100%; overflow: hidden; }
-.project-img img { width: 100%; height: 100%; object-fit: cover; }
-.project-value { position: absolute; top: 12px; right: 12px; background: var(--crimson); color: var(--white); font: 700 1.05rem var(--f-display); letter-spacing: .04em; padding: .3rem .65rem; border-radius: 2px; }
-.project-body { padding: 1.2rem 1.3rem 1.4rem; display: grid; gap: .7rem; align-content: start; }
-.project-body h3 { font: 700 1.45rem/1.05 var(--f-display); text-transform: uppercase; }
-.project-loc { font-family: var(--f-data); font-size: .74rem; color: var(--slate); display: flex; gap: .4rem; align-items: center; }
-.project-loc svg { width: 12px; height: 12px; color: var(--crimson); flex: none; }
-.scope { display: flex; flex-wrap: wrap; gap: .35rem; list-style: none; }
-.scope li { font-size: .78rem; font-weight: 500; padding: .25rem .55rem; background: var(--paper); border-radius: 2px; color: var(--navy); }
-.project--total { grid-column: span 2; background: var(--navy); color: var(--on-navy); border-color: var(--navy); display: grid; align-content: center; padding: 2rem; gap: .8rem; grid-template-rows: none; }
-.project--total b { font: 700 clamp(3rem, 5vw, 4rem)/1 var(--f-display); }
-.project--total b small { font-size: .45em; letter-spacing: .06em; margin-right: .2em; }
-.project--total p { color: var(--on-navy-mute); }
-
-/* Team */
-.team { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1px; background: var(--rule-dark); border: 1px solid var(--rule-dark); border-radius: var(--r); overflow: hidden; }
-.role { background: var(--navy); padding: 1.6rem; display: grid; gap: .7rem; align-content: start; }
-.role svg { width: 30px; height: 30px; color: #FF5A6E; }
-.role h3 { font: 700 1.4rem/1.05 var(--f-display); text-transform: uppercase; }
-.role p { font-size: .93rem; color: var(--on-navy-mute); }
-.tools { margin-top: 2.5rem; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px; list-style: none; }
-.tools li { border: 1px solid var(--rule-dark); border-radius: var(--r); padding: 1.1rem 1.2rem; display: grid; gap: .25rem; }
-.tools b { font: 700 1.3rem var(--f-display); letter-spacing: .03em; }
-.tools span { font-size: .86rem; color: var(--on-navy-mute); }
-
-/* Clients */
-.clients { display: grid; grid-template-columns: repeat(8, minmax(0,1fr)); gap: 12px; list-style: none; }
-.clients li { aspect-ratio: 1; max-width: 100%; border: 1px solid var(--rule); border-radius: var(--r); display: grid; place-items: center; padding: 10px; background: var(--white); }
-.clients img { max-height: 100%; width: auto; object-fit: contain; filter: grayscale(1); opacity: .8; transition: filter .3s, opacity .3s; }
-.clients li:hover img { filter: none; opacity: 1; }
-.coverage { margin-top: 1.4rem; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; font-family: var(--f-data); font-size: .78rem; color: var(--slate); }
-
-/* Contact */
-.contact { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.15fr); gap: clamp(2.5rem, 5vw, 4.5rem); align-items: start; }
-.contact-side { display: grid; gap: 1.6rem; min-width: 0; }
-.engage { list-style: none; display: grid; counter-reset: e; }
-.engage li { counter-increment: e; display: grid; grid-template-columns: 2.6rem minmax(0,1fr); gap: .8rem; padding-block: .9rem; border-top: 1px solid var(--rule-dark); }
-.engage li::before { content: counter(e, decimal-leading-zero); font-family: var(--f-data); font-size: .8rem; color: #FF5A6E; padding-top: .2rem; }
-.engage b { display: block; font: 700 1.15rem var(--f-display); text-transform: uppercase; letter-spacing: .04em; }
-.engage span { font-size: .93rem; color: var(--on-navy-mute); }
-.prep { background: rgba(255,255,255,.05); border: 1px solid var(--rule-dark); border-radius: var(--r); padding: 1.3rem 1.4rem; display: grid; gap: .7rem; }
-.prep h3 { font: 700 1.1rem var(--f-display); letter-spacing: .1em; text-transform: uppercase; }
-.prep .ticks { font-size: .93rem; color: var(--on-navy-mute); }
-.prep .ticks li::before { border-color: #FF5A6E; }
-.cdetails { display: grid; gap: 0; }
-.cline { display: grid; gap: .25rem; padding-block: .95rem; border-top: 1px solid var(--rule-dark); }
-.cline dt { font-family: var(--f-data); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--on-navy-mute); }
-.cline dd { margin: 0; display: grid; gap: .2rem; font-size: 1.05rem; overflow-wrap: anywhere; }
-.cline a { text-decoration: none; }
-.cline a:hover { color: #FF8E9C; }
-.cline .row { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
-.copy-btn { font: 500 .66rem var(--f-data); letter-spacing: .08em; text-transform: uppercase; background: none; border: 1px solid var(--rule-dark); border-radius: 999px; padding: .2rem .55rem; color: var(--on-navy-mute); cursor: pointer; }
-.copy-btn:hover { color: var(--white); border-color: var(--white); }
-
-form.enquiry { background: var(--white); color: var(--ink); border-radius: 6px; padding: clamp(1.5rem, 3vw, 2.4rem); display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1.1rem; box-shadow: 0 30px 60px -30px rgba(0,0,0,.5); }
-.form-title { grid-column: 1 / -1; display: grid; gap: .3rem; margin-bottom: .4rem; }
-.form-title h3 { font: 700 1.8rem/1 var(--f-display); text-transform: uppercase; }
-.form-title p { font-size: .93rem; color: var(--slate); }
-.field { display: grid; gap: .35rem; min-width: 0; }
-.field--full { grid-column: 1 / -1; }
-.field label { font: 600 .85rem var(--f-display); letter-spacing: .12em; text-transform: uppercase; color: var(--slate); }
-.field input, .field select, .field textarea { font: inherit; font-size: 1rem; color: var(--ink); width: 100%; background: var(--paper); border: 1px solid var(--rule); border-radius: var(--r); padding: .8rem .9rem; transition: border-color .2s, background .2s; }
-.field textarea { min-height: 130px; resize: vertical; }
-.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--navy); background: var(--white); }
-.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-.form-foot { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
-.form-foot small { color: var(--slate); font-size: .85rem; }
-.form-status { grid-column: 1 / -1; font-size: .95rem; padding: .85rem 1rem; border-radius: var(--r); }
-.form-status.ok { background: #E7F4EC; color: #155C38; }
-.form-status.err { background: #FCEBEE; color: #8E0F23; }
-
-/* Footer */
-.site-footer { background: var(--navy-deep); color: var(--on-navy-mute); padding-block: 3.5rem 2rem; font-size: .92rem; }
-.foot { display: grid; grid-template-columns: minmax(0,1.3fr) repeat(3, minmax(0,1fr)); gap: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--rule-dark); }
-.foot-brand { display: grid; gap: 1rem; align-content: start; }
-.foot-brand img { width: 160px; height: auto; }
-.foot-brand p { font: 600 1.2rem var(--f-display); letter-spacing: .1em; text-transform: uppercase; color: var(--on-navy); }
-.foot h4 { font: 600 .85rem var(--f-display); letter-spacing: .16em; text-transform: uppercase; color: var(--on-navy); margin-bottom: .9rem; }
-.foot ul { list-style: none; display: grid; gap: .5rem; }
-.foot a { text-decoration: none; overflow-wrap: anywhere; }
-.foot a:hover { color: var(--white); }
-.foot-bottom { padding-top: 1.5rem; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; font-family: var(--f-data); font-size: .74rem; }
-
-/* Responsive */
-@media (max-width: 1080px) {
-  .nav-links, .nav > .btn { display: none; }
-  .menu-btn { display: inline-flex; }
-  .nav.open + .mobile-menu { display: grid; }
-  .hero-grid, .story, .split, .feature, .contact, .receive { grid-template-columns: minmax(0,1fr); }
-  .feature--flip > :first-child { order: 0; }
-  .story-photos { position: static; max-width: 520px; }
-  .numbers ul { grid-template-columns: repeat(3, minmax(0,1fr)); }
-  .numbers li:nth-child(4) { padding-left: 0; border-left: 0; }
-  .numbers li:nth-child(n+4) { border-top: 1px solid var(--rule-dark); }
-  .pa, .lifecycle, .projects, .team { grid-template-columns: repeat(2, minmax(0,1fr)); }
-  .lifecycle .stage:nth-child(3) { border-left: 0; border-top: 1px solid var(--rule-dark); grid-column: 1 / -1; }
-  .pa-card:nth-child(3) { grid-column: 1 / -1; }
-  .clients { grid-template-columns: repeat(4, minmax(0,1fr)); }
-  .foot { grid-template-columns: repeat(2, minmax(0,1fr)); }
-  .dtypes, .tools { grid-template-columns: repeat(2, minmax(0,1fr)); }
-  .project--total { grid-column: auto; }
-}
-@media (max-width: 680px) {
-  .brand img { height: 54px; }
-  .numbers ul { grid-template-columns: repeat(2, minmax(0,1fr)); }
-  .numbers li:nth-child(n) { padding-left: 1.2rem; border-left: 1px solid var(--rule-dark); }
-  .numbers li:nth-child(odd) { padding-left: 0; border-left: 0; }
-  .numbers li:nth-child(n+3) { border-top: 1px solid var(--rule-dark); }
-  .research, .pa, .lifecycle, .projects, .team, .pre, .steps6, .why3, form.enquiry, .foot { grid-template-columns: minmax(0,1fr); }
-  .stat + .stat { padding-left: 0; border-left: 0; border-top: 1px solid var(--rule); }
-  .lifecycle .stage + .stage { border-left: 0; border-top: 1px solid var(--rule-dark); }
-  .pa-card:nth-child(3), .lifecycle .stage:nth-child(3) { grid-column: auto; }
-  .sectors { grid-template-columns: repeat(2, minmax(0,1fr)); }
-  .values { grid-template-columns: minmax(0,1fr); }
-  .readout { grid-template-columns: minmax(0,1fr); }
-  .readout div + div { border-left: 0; padding-left: .3rem; border-top: 1px solid var(--rule-dark); }
-  .readout div { grid-template-columns: 1fr auto; align-items: baseline; padding-block: .6rem; }
-  .readout dd { font-size: 1.1rem; text-align: right; }
-  .story-photos img { aspect-ratio: 4/5; }
-  .story-photos img:last-child { margin-top: 1.5rem; }
-  .hero-grid { padding-block: 2.5rem 3rem; gap: 2.5rem; }
-  .hero-cta .btn { flex: 1 1 100%; justify-content: center; }
-  .hero-meta { display: none; }
-  .band { padding-block: 3.75rem; }
-  .head { margin-bottom: 2rem; }
-  /* Swipeable rows instead of long stacks */
-  .projects, .team { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; margin-inline: -20px; padding: 0 20px 6px; scroll-padding-inline: 20px; background: none; border: 0; border-radius: 0; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-  .projects::-webkit-scrollbar, .team::-webkit-scrollbar { display: none; }
-  .projects > *, .team > * { flex: 0 0 84%; scroll-snap-align: start; }
-  .role { border: 1px solid var(--rule-dark); border-radius: var(--r); }
-  .swipe-hint { display: flex; align-items: center; gap: .5rem; margin-top: .9rem; font-family: var(--f-data); font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; color: var(--slate); }
-  .band--navy .swipe-hint { color: var(--on-navy-mute); }
-  .swipe-hint::after { content: "→"; font-size: 1rem; animation: nudge 1.6s ease-in-out infinite; }
-  .wa-float { padding: .85rem; }
-  .wa-float span { display: none; }
-}
-@keyframes nudge { 0%, 100% { transform: none; } 50% { transform: translateX(5px); } }
-
-/* WhatsApp */
-.wa-float { position: fixed; z-index: 40; right: max(20px, calc(env(safe-area-inset-right, 0px) + 12px)); bottom: calc(20px + env(safe-area-inset-bottom, 0px)); display: inline-flex; align-items: center; gap: .6rem; background: #25D366; color: #fff; text-decoration: none; border-radius: 999px; padding: .75rem 1.15rem .75rem .8rem; font: 600 .95rem var(--f-ui); box-shadow: 0 12px 28px -10px rgba(0,0,0,.45); transition: transform .2s, box-shadow .2s; }
-.wa-float:hover { transform: translateY(-2px); box-shadow: 0 16px 32px -10px rgba(0,0,0,.5); }
-.wa-float svg { width: 30px; height: 30px; flex: none; }
-.wa-link { display: inline-flex; align-items: center; gap: .45rem; }
-.wa-link svg { width: 18px; height: 18px; color: #25D366; flex: none; }
-.swipe-hint { display: none; }
-
-/* Lift-in as sections scroll into view (content stays visible) */
-.lift { transform: translateY(26px); transition: transform .8s cubic-bezier(.2,.7,.2,1), box-shadow .25s, border-color .25s; }
-.lift.in { transform: none; }
-
-/* Order online */
-.order-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 24px; }
-.pkg { background: var(--white); border: 1px solid var(--rule); border-radius: 6px; padding: 1.8rem 1.7rem; display: grid; gap: 1.1rem; grid-template-rows: auto auto auto 1fr auto; transition: border-color .25s, box-shadow .25s; }
-.pkg:hover { border-color: var(--navy); box-shadow: 0 18px 40px -26px rgba(22,36,74,.5); }
-.pkg .mono { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--crimson); }
-.pkg h3 { font: 700 2rem/1 var(--f-display); text-transform: uppercase; }
-.pkg > p { font-family: var(--f-read); color: #2C3550; }
-.pkg .ticks { font-size: .93rem; color: var(--slate); align-self: start; }
-.pkg-foot { display: flex; align-items: end; justify-content: space-between; gap: 1rem; flex-wrap: wrap; border-top: 1px solid var(--rule); padding-top: 1.1rem; }
-.pkg-from { display: grid; }
-.pkg-from small { font-family: var(--f-data); font-size: .7rem; color: var(--slate); text-transform: uppercase; letter-spacing: .08em; }
-.pkg-from b { font: 700 1.7rem/1.1 var(--f-display); font-variant-numeric: tabular-nums; }
-.order-how { margin-top: 2rem; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 0; list-style: none; counter-reset: oh; border-top: 2px solid var(--navy); }
-.order-how li { counter-increment: oh; padding: 1rem 1rem 0 0; font-size: .93rem; color: var(--slate); }
-.order-how li + li { padding-left: 1rem; border-left: 1px solid var(--rule); }
-.order-how li::before { content: "Step " counter(oh); display: block; font-family: var(--f-data); font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--crimson); margin-bottom: .2rem; }
-.order-how b { display: block; color: var(--ink); font: 700 1.1rem var(--f-display); text-transform: uppercase; letter-spacing: .04em; }
-.svc-order { font: 600 .85rem var(--f-display); letter-spacing: .1em; text-transform: uppercase; color: #FF8E9C; background: none; border: 0; padding: 0; cursor: pointer; justify-self: start; text-decoration: underline; text-underline-offset: 3px; }
-.svc-order:hover { color: var(--white); }
-
-dialog.wiz { width: min(880px, calc(100% - 24px)); max-height: calc(100% - 24px); padding: 0; border: 0; border-radius: 8px; background: var(--white); color: var(--ink); box-shadow: 0 40px 80px -20px rgba(10,18,40,.6); overflow: hidden; }
-dialog.wiz[open] { display: grid; grid-template-rows: auto auto minmax(0,1fr) auto; }
-dialog.wiz::backdrop { background: rgba(15,26,54,.72); backdrop-filter: blur(3px); }
-.wiz-head { background: var(--navy); color: var(--on-navy); padding: 1.2rem 1.5rem; display: flex; justify-content: space-between; align-items: start; gap: 1rem; }
-.wiz-head h2 { font: 700 1.7rem/1 var(--f-display); text-transform: uppercase; }
-.wiz-head p { font-size: .9rem; color: var(--on-navy-mute); margin-top: .35rem; }
-.wiz-close { background: none; border: 1px solid var(--rule-dark); color: var(--on-navy); width: 36px; height: 36px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; line-height: 1; flex: none; }
-.wiz-steps { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); list-style: none; background: var(--navy-deep); }
-.wiz-steps li { padding: .6rem 1.5rem; font: 600 .8rem var(--f-display); letter-spacing: .12em; text-transform: uppercase; color: #6E7DA0; border-bottom: 3px solid transparent; }
-.wiz-steps li.on { color: var(--white); border-color: #FF5A6E; }
-.wiz-steps li.done { color: var(--on-navy-mute); border-color: rgba(255,90,110,.35); }
-.wiz-body { overflow-y: auto; padding: 1.5rem; display: grid; gap: 1.2rem; align-content: start; }
-.wiz-body h3 { font: 700 1.25rem var(--f-display); text-transform: uppercase; letter-spacing: .04em; }
-.wiz-hint { font-size: .92rem; color: var(--slate); margin-top: -.6rem; }
-.opts { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
-.opt { position: relative; display: grid; grid-template-columns: auto minmax(0,1fr) auto; gap: .8rem; align-items: start; padding: .95rem 1rem; border: 1px solid var(--rule); border-radius: 4px; cursor: pointer; transition: border-color .15s, background .15s; }
-.opt:hover { border-color: #9AA6BF; }
-.opt input { appearance: none; -webkit-appearance: none; width: 20px; height: 20px; border: 1.5px solid #9AA6BF; border-radius: 3px; margin: .1rem 0 0; display: grid; place-items: center; background: var(--white); cursor: pointer; }
-.opt input:checked { background: var(--crimson); border-color: var(--crimson); }
-.opt input[type="radio"] { border-radius: 50%; }
-.opt input:checked::after { content: ""; width: 5px; height: 10px; border: solid var(--white); border-width: 0 2px 2px 0; transform: translateY(-1px) rotate(45deg); }
-.opt input:disabled { background: var(--navy); border-color: var(--navy); cursor: default; }
-.opt:has(input:checked) { border-color: var(--crimson); background: #FFF6F7; }
-.opt:has(input:disabled) { border-color: var(--rule); background: var(--paper); cursor: default; }
-.opt b { display: block; font-weight: 600; font-size: .98rem; line-height: 1.3; }
-.opt small { display: block; font-size: .83rem; color: var(--slate); line-height: 1.4; margin-top: .2rem; }
-.opt em { font-style: normal; font-family: var(--f-data); font-size: .7rem; color: var(--navy); background: var(--white); border: 1px solid var(--rule); padding: .05rem .4rem; border-radius: 99px; margin-left: .3rem; vertical-align: 1px; }
-.opt .price { font-family: var(--f-data); font-size: .82rem; white-space: nowrap; color: var(--ink); font-variant-numeric: tabular-nums; }
-.wiz-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; }
-.seg { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 8px; }
-.seg label { border: 1px solid var(--rule); border-radius: 4px; padding: .7rem .6rem; text-align: center; cursor: pointer; font-size: .9rem; line-height: 1.25; }
-.seg label:has(input:checked) { border-color: var(--crimson); background: #FFF6F7; color: var(--crimson); font-weight: 600; }
-.seg input { position: absolute; opacity: 0; pointer-events: none; }
-.stepper { display: inline-flex; align-items: center; border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; }
-.stepper button { width: 44px; height: 44px; border: 0; background: var(--paper); font-size: 1.2rem; cursor: pointer; color: var(--navy); }
-.stepper input { width: 64px; height: 44px; border: 0; text-align: center; font: 600 1.1rem var(--f-data); color: var(--ink); background: var(--white); -moz-appearance: textfield; }
-.stepper input::-webkit-inner-spin-button { -webkit-appearance: none; }
-.switch { display: flex; gap: .8rem; align-items: center; padding: .9rem 1rem; border: 1px solid var(--rule); border-radius: 4px; cursor: pointer; }
-.switch input { width: 20px; height: 20px; accent-color: var(--crimson); }
-.switch span { font-size: .93rem; }
-.switch small { display: block; color: var(--slate); font-size: .83rem; }
-
-.quote { border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; }
-.quote-top { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding: 1rem 1.2rem; background: var(--paper); border-bottom: 1px solid var(--rule); font-size: .88rem; }
-.quote-top b { display: block; font: 700 1.2rem var(--f-display); text-transform: uppercase; letter-spacing: .03em; }
-.quote-top .mono { font-size: .78rem; color: var(--slate); text-align: right; }
-.quote table { width: 100%; border-collapse: collapse; font-size: .93rem; }
-.quote td { padding: .6rem 1.2rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
-.quote td:last-child { text-align: right; font-family: var(--f-data); font-size: .85rem; white-space: nowrap; font-variant-numeric: tabular-nums; }
-.quote tr.sum td { border-bottom: 0; padding-block: .35rem; color: var(--slate); }
-.quote tr.sum:first-of-type td { padding-top: .9rem; }
-.quote tr.total td { background: var(--navy); color: var(--white); font: 700 1.3rem var(--f-display); padding-block: .9rem; }
-.quote tr.total td:last-child { font: 700 1.3rem var(--f-display); }
-.quote-terms { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1px; background: var(--rule); border-top: 1px solid var(--rule); }
-.quote-terms div { background: var(--white); padding: .8rem 1.2rem; font-size: .85rem; color: var(--slate); }
-.quote-terms b { display: block; color: var(--ink); font: 700 1.1rem var(--f-display); }
-.fineprint { font-size: .83rem; color: var(--slate); }
-.done-box { text-align: center; display: grid; gap: 1rem; justify-items: center; padding: 1.5rem .5rem; }
-.done-box svg { width: 64px; height: 64px; color: var(--crimson); }
-.done-box h3 { font-size: 1.8rem; }
-.bank { width: 100%; max-width: 480px; text-align: left; border: 1px solid var(--rule); border-radius: 4px; }
-.bank div { display: flex; justify-content: space-between; gap: 1rem; padding: .6rem 1rem; border-bottom: 1px solid var(--rule); font-size: .92rem; }
-.bank div:last-child { border-bottom: 0; }
-.bank span { color: var(--slate); }
-.bank b { font-family: var(--f-data); font-weight: 500; overflow-wrap: anywhere; text-align: right; }
-.pp-box { width: 100%; max-width: 420px; min-height: 60px; }
-.pp-msg { width: 100%; max-width: 420px; background: #FCEBEE; color: #8E0F23; padding: .7rem 1rem; border-radius: 4px; font-size: .9rem; }
-.pay-alt { width: 100%; max-width: 480px; text-align: left; }
-.pay-alt summary { cursor: pointer; font-weight: 600; color: var(--navy); padding: .4rem 0; text-align: center; }
-.pay-alt .bank { margin-top: .6rem; }
-.wiz-foot { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.5rem; border-top: 1px solid var(--rule); background: var(--paper); flex-wrap: wrap; }
-.wiz-total small { display: block; font-family: var(--f-data); font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; color: var(--slate); }
-.wiz-total b { font: 700 1.6rem/1 var(--f-display); font-variant-numeric: tabular-nums; }
-.wiz-actions { display: flex; gap: .6rem; }
-.btn--plain { background: var(--white); border-color: var(--rule); color: var(--ink); }
-.btn--plain:hover { border-color: var(--navy); }
-.btn:disabled { opacity: .55; cursor: wait; }
-.wiz-error { background: #FCEBEE; color: #8E0F23; padding: .75rem 1rem; border-radius: 4px; font-size: .93rem; }
-@media (max-width: 1080px) { .order-grid { grid-template-columns: minmax(0,1fr); } .order-how { grid-template-columns: repeat(2, minmax(0,1fr)); } .order-how li:nth-child(3) { padding-left: 0; border-left: 0; } }
-@media (max-width: 680px) {
-  .opts, .wiz-grid, .seg, .quote-terms { grid-template-columns: minmax(0,1fr); }
-  .seg { grid-template-columns: repeat(2, minmax(0,1fr)); }
-  .order-how { grid-template-columns: minmax(0,1fr); }
-  .order-how li + li { padding-left: 0; border-left: 0; }
-  .wiz-steps li { padding: .55rem .5rem; font-size: .68rem; letter-spacing: .06em; text-align: center; }
-  .wiz-body, .wiz-head, .wiz-foot { padding-left: 1rem; padding-right: 1rem; }
-  .wiz-actions { width: 100%; } .wiz-actions .btn { flex: 1; justify-content: center; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation: none !important; transition: none !important; }
-  html { scroll-behavior: auto; }
-}
-
-/* ═══════════ Cinematic theme ═══════════
-   Deep-sea navy canvas, frosted-glass surfaces, crimson light. Light tokens above stay for the
-   white forms (enquiry form, order window); everything on the page itself is restyled here. */
-:root {
-  --bg: #060B18;
-  --bg-2: #0A1328;
-  --text: #EAF0FA;
-  --text-mute: #93A3C2;
-  --line: rgba(255,255,255,.09);
-  --glass: linear-gradient(180deg, rgba(255,255,255,.065), rgba(255,255,255,.02));
-  --accent: #FF5A6E;
-  --accent-2: #FF8A6A;
-  --radius: 16px;
-  color-scheme: dark;
-}
-body { background: var(--bg); color: var(--text); }
-body::before { background: var(--bg); }
-body::after { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 70; opacity: .05;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
-::selection { background: var(--crimson); color: #fff; }
-
-/* Bands */
-.band { position: relative; background: var(--bg); }
-.band--paper, .band--navy { background: var(--bg-2); color: var(--text); }
-.band--paper::before, .band--navy::before { content: ""; position: absolute; inset: 0 0 auto; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,90,110,.35), transparent); }
-.label, .band--navy .label { color: var(--accent); }
-.label::before { box-shadow: 0 0 12px var(--accent); }
-.h2 em, .band--navy .h2 em, .hero h1 span + span {
-  background: linear-gradient(92deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.lede, .band--navy .lede { color: var(--text-mute); }
-.btn { border-radius: 10px; }
-.btn--red { box-shadow: 0 12px 30px -12px rgba(224,40,60,.85); }
-.btn--red:hover { box-shadow: 0 16px 36px -10px rgba(224,40,60,.95); }
-.btn--line { border-color: rgba(255,255,255,.22); background: rgba(255,255,255,.04); backdrop-filter: blur(6px); }
-
-/* Glass surfaces + cursor spotlight */
-.spot { position: relative; isolation: isolate; }
-.spot::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: -1; opacity: 0; transition: opacity .3s;
-  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(255,90,110,.13), transparent 45%); }
-.spot:hover::after { opacity: 1; }
-
-/* Header */
-.site-header { background: transparent; border-bottom-color: transparent; color: var(--text); transition: background .35s, border-color .35s, box-shadow .35s; }
-.site-header.scrolled { background: rgba(6,11,24,.78); border-bottom-color: var(--line); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: 0 10px 30px -18px rgba(0,0,0,.8); }
-.nav-links a { color: rgba(234,240,250,.72); }
-.nav-links a:hover, .nav-links a.active { color: #fff; }
-.nav-links a.active { text-shadow: 0 0 18px rgba(255,90,110,.6); }
-.menu-btn { color: #fff; }
-.mobile-menu a { border-top-color: var(--line); color: var(--text); }
-.nav.open + .mobile-menu { background: rgba(6,11,24,.96); margin-inline: -20px; padding-inline: 20px; }
-
-/* Hero */
-.hero { margin-top: -84px; padding-top: 84px; min-height: clamp(640px, 94svh, 960px); display: grid; align-items: center; background:
-  radial-gradient(60% 70% at 15% 30%, rgba(200,16,46,.22), transparent 60%),
-  radial-gradient(50% 60% at 85% 80%, rgba(40,80,170,.25), transparent 65%), var(--bg); }
-.hero::before { opacity: .18; }
-.hero::after { content: ""; position: absolute; inset: auto 0 0; height: 160px; background: linear-gradient(transparent, var(--bg)); pointer-events: none; z-index: 1; }
-.hero-grid { z-index: 2; }
-.hero h1 { font-size: clamp(3rem, 5.6vw, 5.4rem); max-width: 11ch; text-shadow: 0 10px 40px rgba(0,0,0,.4); }
-.hero .lede { color: #B9C5DD; }
-.hero-wall { position: absolute; top: 0; bottom: 0; right: 0; width: 58%; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; padding-inline: 14px; overflow: hidden; z-index: 0; transform: rotate(-4deg) scale(1.12); transform-origin: center;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 35%); mask-image: linear-gradient(90deg, transparent, #000 35%);
-  opacity: .55; }
-.wall-col { overflow: hidden; }
-.wall-track { display: grid; gap: 14px; animation: wall-up 60s linear infinite; }
-.wall-col:nth-child(2) .wall-track { animation-direction: reverse; animation-duration: 75s; }
-.wall-col:nth-child(3) .wall-track { animation-duration: 68s; }
-.wall-track img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 14px; filter: saturate(.85) contrast(1.05); }
-@keyframes wall-up { from { transform: translateY(0); } to { transform: translateY(-50%); } }
-.programme { background: rgba(10,19,40,.62); border: 1px solid rgba(255,255,255,.14); border-radius: 18px; backdrop-filter: blur(18px) saturate(1.2); -webkit-backdrop-filter: blur(18px) saturate(1.2);
-  box-shadow: 0 40px 80px -30px rgba(0,0,0,.85), inset 0 1px 0 rgba(255,255,255,.08); }
-.scroll-cue { position: absolute; left: 50%; bottom: 26px; z-index: 3; transform: translateX(-50%); display: grid; justify-items: center; gap: .4rem; font-family: var(--f-data); font-size: .66rem; letter-spacing: .2em; text-transform: uppercase; color: var(--text-mute); text-decoration: none; }
-.scroll-cue::after { content: ""; width: 1px; height: 38px; background: linear-gradient(var(--accent), transparent); animation: cue 2s ease-in-out infinite; transform-origin: top; }
-@keyframes cue { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); } 100% { transform: scaleY(1); opacity: 0; } }
-
-/* Numbers */
-.numbers { background: transparent; position: relative; z-index: 2; margin-top: -40px; }
-.numbers ul { background: var(--glass); border: 1px solid var(--line); border-radius: var(--radius); backdrop-filter: blur(12px); padding-inline: 1.4rem; box-shadow: 0 30px 60px -30px rgba(0,0,0,.7); }
-.numbers li + li { border-left-color: var(--line); }
-.numbers b { background: linear-gradient(180deg, #fff, #B9C5DD); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.numbers b sup { -webkit-text-fill-color: var(--accent); }
-.numbers span { color: var(--text-mute); }
-
-/* Story */
-.story-photos img { border-radius: var(--radius); box-shadow: 0 30px 60px -25px rgba(0,0,0,.8); outline: 1px solid var(--line); }
-.story-photos img:first-child { box-shadow: 0 30px 60px -25px rgba(0,0,0,.8), -20px 20px 60px -20px rgba(200,16,46,.45); }
-.story-copy .prose { color: #C3CDE0; }
-.pull { color: #fff; border-left-color: var(--accent); }
-.mission { background: linear-gradient(135deg, #C8102E, #8E0B21 70%); border-radius: var(--radius); box-shadow: 0 30px 70px -30px rgba(200,16,46,.75); }
-
-/* Research + hurdles */
-.research { border-top: 1px solid var(--line); }
-.stat + .stat { border-left-color: var(--line); }
-.stat b { color: var(--accent); text-shadow: 0 0 40px rgba(255,90,110,.35); }
-.stat p { color: #C3CDE0; }
-.stat cite, .research-note { color: var(--text-mute); }
-.pa-card { background: var(--glass); border-color: var(--line); border-radius: var(--radius); }
-.pa-problem { border-bottom-color: var(--line); }
-.pa-problem .mono { color: var(--accent); }
-.pa-problem p { color: var(--text-mute); }
-.pa-answer { background: rgba(255,255,255,.02); }
-.pa-answer h4 { color: #fff; }
-.pa-answer h4 svg { color: var(--accent); }
-.ticks li::before { border-color: var(--accent); }
-.motto { color: var(--text-mute); }
-
-/* Lifecycle */
-.lifecycle { border-color: var(--line); border-radius: var(--radius); background: var(--glass); overflow: hidden; }
-.stage + .stage { border-left-color: var(--line); }
-.stage-head { border-bottom: 2px solid transparent; border-image: linear-gradient(90deg, var(--accent), transparent) 1; }
-.why3 li { border-top-color: var(--line); }
-
-/* Order */
-.pkg { background: var(--glass); border-color: var(--line); border-radius: var(--radius); color: var(--text); }
-.pkg:hover { border-color: rgba(255,90,110,.45); box-shadow: 0 30px 60px -30px rgba(200,16,46,.5); }
-.pkg .mono { color: var(--accent); }
-.pkg > p { color: #C3CDE0; }
-.pkg .ticks { color: var(--text-mute); }
-.pkg-foot { border-top-color: var(--line); }
-.pkg-from small { color: var(--text-mute); }
-.order-how { border-top: 1px solid var(--line); }
-.order-how li { color: var(--text-mute); }
-.order-how li + li { border-left-color: var(--line); }
-.order-how li::before { color: var(--accent); }
-.order-how b { color: #fff; }
-
-/* Delay analysis */
-.steps6 { background: var(--line); border-color: var(--line); border-radius: var(--radius); overflow: hidden; }
-.steps6 li { background: var(--bg-2); }
-.steps6 .mono, .flow li::before { color: var(--accent); }
-.steps6 p, .method p, .dtype span, .flow li { color: var(--text-mute); }
-.flow b { color: var(--text); }
-.flow li { border-bottom-color: var(--line); }
-.method { border-bottom-color: var(--line); }
-.method:first-child { border-top: 1px solid var(--line); }
-.dtype { background: var(--glass); border-color: var(--line); border-radius: 12px; }
-.dtype--tc { background: rgba(200,16,46,.12); border-color: rgba(255,90,110,.5); }
-.dtype--tc b { color: var(--accent); }
-.receive-box { background: var(--glass); border-color: var(--line); border-radius: var(--radius); }
-.note-red { background: linear-gradient(135deg, #C8102E, #8E0B21 70%); border-radius: var(--radius); }
-#delay-analysis h3.mono { color: var(--text-mute) !important; }
-
-/* Features */
-.feature img, .pre-card img { border-radius: var(--radius); }
-.feature img { box-shadow: 0 40px 80px -35px rgba(0,0,0,.85); outline: 1px solid var(--line); }
-.chips li { background: rgba(255,255,255,.04); border-color: var(--line); color: var(--text); }
-.pre-card { background: var(--glass); border-color: var(--line); border-radius: var(--radius); }
-.pre-card img { border-radius: 0; }
-.pre-body > p { color: #C3CDE0; }
-.pre-body > p.callout, .callout { background: rgba(200,16,46,.12); border: 1px solid rgba(255,90,110,.3); color: var(--text); border-radius: 10px; }
-
-/* Projects: photo-led */
-.sector { border-radius: 14px; }
-.project { position: relative; background: #0B1428; border-color: var(--line); border-radius: var(--radius); overflow: hidden; display: block; min-height: 380px; }
-.project:hover { box-shadow: 0 30px 60px -25px rgba(0,0,0,.9); }
-.project-img { position: absolute; inset: 0; aspect-ratio: auto; }
-.project-img img { transition: transform .9s cubic-bezier(.2,.7,.2,1); }
-.project:hover .project-img img { transform: scale(1.06); }
-.project-img::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,11,24,.05) 25%, rgba(6,11,24,.92) 78%); }
-.project-value { z-index: 1; border-radius: 8px; box-shadow: 0 8px 20px -6px rgba(200,16,46,.8); }
-.project-body { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; padding: 1.4rem; }
-.project-body h3 { color: #fff; }
-.project-loc { color: #B9C5DD; }
-.scope li { background: rgba(255,255,255,.12); color: #fff; backdrop-filter: blur(6px); border-radius: 6px; }
-.project--total { background: linear-gradient(135deg, rgba(200,16,46,.28), rgba(10,19,40,.9)); border-color: rgba(255,90,110,.35); min-height: 0; display: grid; }
-
-/* Team */
-.team { background: var(--line); border-color: var(--line); border-radius: var(--radius); }
-.role { background: var(--bg-2); }
-.role p, .tools span { color: var(--text-mute); }
-.tools li { border-color: var(--line); background: var(--glass); border-radius: 12px; }
-
-/* Clients marquee */
-.clients-marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
-.clients { display: flex; width: max-content; gap: 18px; animation: marquee 40s linear infinite; }
-.clients-marquee:hover .clients { animation-play-state: paused; }
-.clients li { width: 150px; flex: none; border-radius: 14px; border-color: transparent; background: #fff; }
-.clients img { filter: none; opacity: 1; }
-@keyframes marquee { to { transform: translateX(calc(-50% - 9px)); } }
-.coverage { color: var(--text-mute); }
-
-/* Contact */
-.engage li { border-top-color: var(--line); }
-.cline { border-top-color: var(--line); }
-form.enquiry { border-radius: 18px; box-shadow: 0 40px 90px -30px rgba(0,0,0,.9), 0 0 0 1px rgba(255,255,255,.06); }
-.prep { border-radius: var(--radius); }
-
-/* Footer */
-.site-footer { background: #040811; border-top: 1px solid var(--line); }
-.foot { border-bottom-color: var(--line); }
-
-/* WhatsApp glow */
-.wa-float { box-shadow: 0 14px 34px -10px rgba(37,211,102,.6); }
-
-@media (max-width: 1080px) {
-  .hero { min-height: 0; }
-  .hero-wall { width: 100%; opacity: .22; transform: rotate(-4deg) scale(1.25); -webkit-mask-image: none; mask-image: none; }
-  .scroll-cue { display: none; }
-  .numbers { margin-top: 0; }
-  .lifecycle .stage:nth-child(3) { border-top-color: var(--line); }
-}
-@media (max-width: 680px) {
-  .numbers ul { padding-inline: 1rem; }
-  .numbers li:nth-child(n+3) { border-top-color: var(--line); }
-  .numbers li:nth-child(n) { border-left-color: var(--line); }
-  .stat + .stat { border-top-color: var(--line); }
-  .lifecycle .stage + .stage { border-top-color: var(--line); }
-  .project { min-height: 360px; }
-  .team { background: none; border: 0; }
-  .role { border: 1px solid var(--line); border-radius: var(--radius); }
-  .clients li { width: 120px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .wall-track, .clients, .scroll-cue::after { animation: none !important; }
-}
-</style>
+<link rel="stylesheet" href="assets/css/site.css">
 </head>
-<body>
+<body data-page="home">
 
 <header class="site-header">
   <div class="wrap">
     <nav class="nav" aria-label="Main">
-      <a class="brand" href="#top" aria-label="Red Ocean Consult home"><img src="assets/img/logo-white.svg" alt="Red Ocean Consult" width="378" height="266"></a>
+      <a class="brand" href="./" aria-label="Red Ocean Consult home"><img src="assets/img/logo-white.svg" alt="Red Ocean Consult" width="378" height="266"></a>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#order">Order online</a></li>
-        <li><a href="#delay-analysis">Delay analysis</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#team">Team</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="about.html" data-nav="about">About</a></li>
+        <li class="has-sub"><a href="services.html" data-nav="services">Services</a>
+          <ul class="sub"><li><a href="tender-takeoff.html">Tender &amp; Quantity Takeoff</a></li><li><a href="planning.html">Planning &amp; Baselines</a></li><li><a href="delay-analysis.html">Delay Analysis &amp; EOT</a></li><li><a href="quantum-arbitration.html">Quantum &amp; Arbitration</a></li></ul></li>
+        <li><a href="projects.html" data-nav="projects">Projects</a></li>
+        <li><a href="order.html" data-nav="order">Order online</a></li>
+        <li><a href="contact.html" data-nav="contact">Contact</a></li>
       </ul>
-      <a class="btn btn--red" href="#contact">Free consultation</a>
+      <a class="btn btn--red" href="contact.html">Free consultation</a>
       <button class="menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
       </button>
     </nav>
     <div class="mobile-menu" id="mobile-menu">
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#order">Order online</a>
-      <a href="#delay-analysis">Delay analysis</a>
-      <a href="#projects">Projects</a>
-      <a href="#team">Team</a>
-      <a class="btn btn--red" href="#contact">Free consultation</a>
+      <a href="about.html" data-nav="about">About</a>
+      <a href="services.html" data-nav="services">Services</a>
+      <a class="mm-sub" href="tender-takeoff.html">Tender &amp; Quantity Takeoff</a>
+      <a class="mm-sub" href="planning.html">Planning &amp; Baselines</a>
+      <a class="mm-sub" href="delay-analysis.html">Delay Analysis &amp; EOT</a>
+      <a class="mm-sub" href="quantum-arbitration.html">Quantum &amp; Arbitration</a>
+      <a href="projects.html" data-nav="projects">Projects</a>
+      <a href="order.html" data-nav="order">Order online</a>
+      <a href="contact.html" data-nav="contact">Contact</a>
+      <a class="btn btn--red" href="contact.html">Free consultation</a>
     </div>
   </div>
 </header>
 
 <main id="top">
-
-<!-- HERO -->
 <section class="hero" aria-labelledby="hero-title">
   <div class="hero-wall" aria-hidden="true">
     <div class="wall-col"><div class="wall-track"><img src="assets/img/project-kafd-2-14.jpg" alt="" width="300" height="400"><img src="assets/img/project-amazon-riyadh-front.jpg" alt="" width="300" height="400"><img src="assets/img/sector-commercial.jpg" alt="" width="300" height="400"><img src="assets/img/project-kafd-residence.jpg" alt="" width="300" height="400"><img src="assets/img/project-kafd-2-14.jpg" alt="" width="300" height="400"><img src="assets/img/project-amazon-riyadh-front.jpg" alt="" width="300" height="400"><img src="assets/img/sector-commercial.jpg" alt="" width="300" height="400"><img src="assets/img/project-kafd-residence.jpg" alt="" width="300" height="400"></div></div>
@@ -797,9 +71,9 @@ form.enquiry { border-radius: 18px; box-shadow: 0 40px 90px -30px rgba(0,0,0,.9)
       <h1 id="hero-title"><span>Every delay traced.</span><span>Every day recovered.</span></h1>
       <p class="lede">We protect contractors' rights when delays are caused by other parties. Primavera P6 baselines, forensic delay analysis, extension of time and quantum claims, from tender to final account.</p>
       <div class="hero-cta">
-        <a class="btn btn--red" href="#order">Order online
+        <a class="btn btn--red" href="order.html">Order online
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
-        <a class="btn btn--line" href="#contact">Book a free consultation</a>
+        <a class="btn btn--line" href="contact.html">Book a free consultation</a>
       </div>
       <p class="hero-meta">Facts first · method second · position third</p>
     </div>
@@ -889,10 +163,9 @@ form.enquiry { border-radius: 18px; box-shadow: 0 40px 90px -30px rgba(0,0,0,.9)
       <figcaption class="programme-note">Illustrative example. Dashed outline = approved baseline · solid = as-built / forecast · hatched = employer delay.</figcaption>
     </figure>
   </div>
-  <a class="scroll-cue" href="#about">Scroll</a>
+  <a class="scroll-cue" href="#what-we-do">Scroll</a>
 </section>
 
-<!-- NUMBERS -->
 <section class="numbers" aria-label="Experience in numbers">
   <div class="wrap">
     <ul>
@@ -906,358 +179,58 @@ form.enquiry { border-radius: 18px; box-shadow: 0 40px 90px -30px rgba(0,0,0,.9)
   </div>
 </section>
 
-<!-- STORY -->
-<section class="band" id="about" aria-labelledby="about-title">
-  <div class="wrap story">
-    <div class="story-photos">
-      <img src="assets/img/story-engineers.jpg" alt="Site engineers reviewing drawings on a construction site" loading="lazy" width="416" height="758">
-      <img src="assets/img/story-justice.jpg" alt="Scales of justice against cranes at sunset" loading="lazy" width="416" height="758">
+<section class="band" id="what-we-do" aria-labelledby="wwd-title">
+  <div class="wrap">
+    <div class="head head--split">
+      <div><span class="label">What we do</span>
+      <h2 class="h2" id="wwd-title">One partner <em>from tender to final account</em></h2></div>
+      <p class="lede">Four specialist services that follow your project through every stage, so the same story holds from the first programme to the hearing room.</p>
     </div>
-    <div class="story-copy">
-      <span class="label">Who we are</span>
-      <h2 class="h2" id="about-title">Hands-on construction experience, <em>applied to programmes and claims</em></h2>
-      <div class="prose">
-        <p>Red Ocean Consult was founded in 2019, born out of years spent on live construction sites across Saudi Arabia. Time and again, our founders watched capable contractors carry the cost of delays they had not caused. Late access, delayed approvals, design changes and late instructions from the employer pushed completion dates back, yet the contractor was left to absorb the time, the prolongation costs and, too often, liquidated damages.</p>
-        <p>The problem was rarely a lack of entitlement. It was a lack of evidence. Programmes were not kept up to date, records were scattered, and delay events were never linked to the critical path in a way an engineer or tribunal could follow.</p>
-        <p>We set up Red Ocean Consult to change that. We combined hands-on construction experience with forensic scheduling, so that every delay is traced to its cause, every day of extension is supported by records, and every claim can be followed from event to entitlement.</p>
-      </div>
-      <p class="pull">Facts first. Method second. Position third.</p>
-      <div class="mission">
-        <h3>Our mission</h3>
-        <p>To protect the legal rights of contractors for delays caused by other parties, and to bring transparency and efficiency to every table where time and money are decided.</p>
-        <ul class="values">
-          <li><b>Integrity</b><span>We follow the evidence wherever it leads.</span></li>
-          <li><b>Transparency</b><span>Every assumption and method is open to review.</span></li>
-          <li><b>Efficiency</b><span>Clear, well-organised submissions that save everyone's time.</span></li>
-          <li><b>Fairness</b><span>Entitlement decided on cause and contract, not leverage.</span></li>
-        </ul>
-      </div>
+    <div class="svc-grid">
+      <a class="svc-card spot" href="tender-takeoff.html">
+        <span class="svc-img"><img src="assets/img/tender.jpg" alt="" loading="lazy" width="800" height="500"></span>
+        <span class="svc-body"><span class="mono">Stage 1 · Pre-contract</span><b>Tender &amp; Quantity Takeoff</b><span class="svc-line">Complete, compliant bids with quantities you can check.</span><span class="svc-more">Explore <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></span>
+      </a>
+      <a class="svc-card spot" href="planning.html">
+        <span class="svc-img"><img src="assets/img/meeting.jpg" alt="" loading="lazy" width="800" height="500"></span>
+        <span class="svc-body"><span class="mono">Stage 2 · Plan &amp; control</span><b>Planning &amp; Baselines</b><span class="svc-line">Primavera P6 baselines approved first time, and honest progress reporting.</span><span class="svc-more">Explore <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></span>
+      </a>
+      <a class="svc-card spot" href="delay-analysis.html">
+        <span class="svc-img"><img src="assets/img/story-justice.jpg" alt="" loading="lazy" width="800" height="500"></span>
+        <span class="svc-body"><span class="mono">Stage 3 · Claim</span><b>Delay Analysis &amp; EOT</b><span class="svc-line">Forensic delay analysis that links every event to the critical path.</span><span class="svc-more">Explore <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></span>
+      </a>
+      <a class="svc-card spot" href="quantum-arbitration.html">
+        <span class="svc-img"><img src="assets/img/arbitration.jpg" alt="" loading="lazy" width="800" height="500"></span>
+        <span class="svc-body"><span class="mono">Stage 4 · Recover</span><b>Quantum &amp; Arbitration</b><span class="svc-line">Auditable cost claims and expert support from negotiation to hearing.</span><span class="svc-more">Explore <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></span>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- THE CASE -->
-<section class="band band--paper" aria-labelledby="case-title">
-  <div class="wrap">
-    <div class="head">
-      <span class="label">The case for specialist support</span>
-      <h2 class="h2" id="case-title">Delay is the norm in Saudi construction. <em>Evidence is not.</em></h2>
-      <p class="lede">Contractors rarely lose claims because they were not entitled. They lose them because the programme, records and notices were not there when it mattered.</p>
+<section class="band band--paper" aria-labelledby="why-title">
+  <div class="wrap why-row">
+    <div class="why-intro">
+      <span class="label">Why Red Ocean</span>
+      <h2 class="h2" id="why-title">Delay is the norm. <em>Evidence is not.</em></h2>
+      <p class="lede">About 70% of Saudi public sector projects were delayed over the past decade. Contractors rarely lose claims because they were not entitled. They lose them because the programme, records and notices were not there when it mattered.</p>
+      <a class="text-link" href="about.html#case">See the research <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
     </div>
-    <div class="research">
-      <div class="stat">
-        <b>70%</b>
-        <p>of public sector projects were delayed over the past decade, with delayed public projects valued at around USD 147 billion.</p>
-        <cite>Dawood, “Addressing Construction Delays in the Kingdom of Saudi Arabia”</cite>
-      </div>
-      <div class="stat">
-        <b>45<small style="font-size:.45em"> of </small>76</b>
-        <p>studied projects were delayed. 76% of contractors reported average overruns of 10% to 30% of original duration. Change orders were the most common cause.</p>
-        <cite>Assaf and Al-Hejji, International Journal of Project Management, 2006</cite>
-      </div>
-      <div class="stat">
-        <b>39%</b>
-        <p>average delay across 49 owner-side road and bridge projects in Mecca, with most delays caused from the owner's side.</p>
-        <cite>Elawi, Algahtany and Kashiwagi, Procedia Engineering, 2016</cite>
-      </div>
-    </div>
-    <p class="research-note">These are separate studies with different samples and dates, not one market forecast. When delay originates with the employer, an approved programme and records are what turn it into recoverable time and cost.</p>
-
-    <div class="pa">
-      <article class="pa-card spot">
-        <div class="pa-problem">
-          <span class="mono">Hurdle 1</span>
-          <h3>No approved baseline</h3>
-          <p>Nothing agreed to measure delay against. The critical path is contested and EOT claims lose their reference point.</p>
-        </div>
-        <div class="pa-answer">
-          <h4><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9h11M10 5l4 4-4 4"/></svg>We build it and get it approved</h4>
-          <ul class="ticks">
-            <li>Review the contract, scope and milestones</li>
-            <li>Build the WBS and logic in Primavera P6</li>
-            <li>Incorporate consultant comments until approval</li>
-            <li>Reconstruct a reasoned programme where work started without one</li>
-          </ul>
-        </div>
-      </article>
-      <article class="pa-card spot">
-        <div class="pa-problem">
-          <span class="mono">Hurdle 2</span>
-          <h3>No contemporaneous records</h3>
-          <p>Events are hard to prove after the fact, claim values are challenged line by line, and concurrency cannot be separated.</p>
-        </div>
-        <div class="pa-answer">
-          <h4><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9h11M10 5l4 4-4 4"/></svg>We set up and keep the records</h4>
-          <ul class="ticks">
-            <li>Monthly programme updates with variance narratives</li>
-            <li>Templates for daily site records and progress</li>
-            <li>A Document Controller to index and time-stamp everything</li>
-            <li>Rebuild the chronology where records are patchy</li>
-          </ul>
-        </div>
-      </article>
-      <article class="pa-card spot">
-        <div class="pa-problem">
-          <span class="mono">Hurdle 3</span>
-          <h3>No official letters or notices</h3>
-          <p>Missing or late notices can forfeit time and money under time-bar clauses. Silence can be read as acceptance.</p>
-        </div>
-        <div class="pa-answer">
-          <h4><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9h11M10 5l4 4-4 4"/></svg>We draft and track the notices</h4>
-          <ul class="ticks">
-            <li>Identify notice and time-bar requirements</li>
-            <li>Draft early warning, delay and claim notices</li>
-            <li>Keep a notice register and deadline tracker</li>
-            <li>Link each letter to the event and the programme</li>
-          </ul>
-        </div>
-      </article>
-    </div>
-    <p class="motto">Notice early · Record daily · Programme honestly</p>
-  </div>
-</section>
-
-<!-- SERVICES LIFECYCLE -->
-<section class="band band--navy" id="services" aria-labelledby="services-title">
-  <div class="wrap">
-    <div class="head">
-      <span class="label">Our services</span>
-      <h2 class="h2" id="services-title">One partner <em>from tender to final account</em></h2>
-      <p class="lede">Our support follows the project through every stage, so the same story holds from the first programme to the hearing room.</p>
-    </div>
-    <div class="lifecycle">
-      <div class="stage spot">
-        <div class="stage-head"><span class="mono">Stage 1</span><h3>Tender to plan</h3></div>
-        <div class="svc"><h4>Tender preparation</h4><p>Tender documents, method statement, tender programme, clarifications log and a final compliance check.</p></div>
-        <div class="svc"><h4>Quantity takeoff</h4><p>Digital measurement in PlanSwift and organised Excel schedules for pricing and variations.</p></div>
-        <div class="svc"><h4>Baseline programme</h4><p>Primavera P6 baseline built on contract review and approved by the consultant first time.</p><button class="svc-order" type="button" data-order="baseline">Order online</button></div>
-      </div>
-      <div class="stage spot">
-        <div class="stage-head"><span class="mono">Stage 2</span><h3>Control to claim</h3></div>
-        <div class="svc"><h4>Progress reporting</h4><p>Schedule updates, Excel and Power BI dashboards, S-curves, and SPI and CPI each period.</p></div>
-        <div class="svc"><h4>Delay analysis</h4><p>Windows analysis, time impact analysis or as-planned versus as-built, chosen by the evidence.</p></div>
-        <div class="svc"><h4>Extension of time claims</h4><p>Notices, a clear chronology, causation analysis and expert support for each EOT claim.</p><button class="svc-order" type="button" data-order="eot">Order online</button></div>
-      </div>
-      <div class="stage spot">
-        <div class="stage-head"><span class="mono">Stage 3</span><h3>Negotiate to arbitration</h3></div>
-        <div class="svc"><h4>Quantum claims</h4><p>Cost heads built from records into a schedule that can be audited line by line.</p><button class="svc-order" type="button" data-order="quantum">Order online</button></div>
-        <div class="svc"><h4>Dispute avoidance</h4><p>Early notices, contemporaneous records, time-bar tracking and negotiation-ready claim packages.</p></div>
-        <div class="svc"><h4>Arbitration &amp; expert services</h4><p>Expert reports on time and quantum, hearing support and rebuttals of opposing reports.</p></div>
-      </div>
-    </div>
-    <ul class="why3">
-      <li>One consistent story, from programme to claim to hearing</li>
-      <li>Transparent methods and assumptions, open to review</li>
-      <li>Efficient, organised records that save everyone's time</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ORDER ONLINE -->
-<section class="band band--paper" id="order" aria-labelledby="order-title">
-  <div class="wrap">
-    <div class="head">
-      <span class="label">Order online</span>
-      <h2 class="h2" id="order-title">Build your scope. <em>Get your quotation instantly.</em></h2>
-      <p class="lede">Choose the deliverables you need, tell us about the project, and see a full priced quotation straight away. Approve it and pay online to get started.</p>
-    </div>
-    <div class="order-grid">
-      <article class="pkg spot">
-        <span class="mono">Planning</span>
-        <h3>Baseline Programme</h3>
-        <p>A Primavera P6 baseline built on contract review and approved by the consultant.</p>
-        <ul class="ticks"><li>Primavera P6 baseline schedule</li><li>Cost and manpower loading</li><li>Schedule narrative and BOQ mapping</li></ul>
-        <div class="pkg-foot"><span class="pkg-from"><small>From</small><b data-from="baseline">SAR 7,000</b></span><button class="btn btn--red" type="button" data-order="baseline">Order online</button></div>
-      </article>
-      <article class="pkg spot">
-        <span class="mono">Delay &amp; time</span>
-        <h3>EOT Claim</h3>
-        <p>Forensic delay analysis and a complete extension of time submission.</p>
-        <ul class="ticks"><li>Detailed time impact analysis</li><li>Or a general impacted as-planned analysis</li><li>EOT report linked to the critical path</li></ul>
-        <div class="pkg-foot"><span class="pkg-from"><small>From</small><b data-from="eot">SAR 5,000</b></span><button class="btn btn--red" type="button" data-order="eot">Order online</button></div>
-      </article>
-      <article class="pkg spot">
-        <span class="mono">Cost</span>
-        <h3>Quantum Claim</h3>
-        <p>Cost heads built from your records into an auditable claim schedule.</p>
-        <ul class="ticks"><li>Time impact analysis + quantum claim</li><li>Or quantum claim only</li><li>Auditable cost schedule from your records</li></ul>
-        <div class="pkg-foot"><span class="pkg-from"><small>From</small><b data-from="quantum">SAR 7,000</b></span><button class="btn btn--red" type="button" data-order="quantum">Order online</button></div>
-      </article>
-    </div>
-    <ol class="order-how">
-      <li><b>Choose scope</b>Tick the deliverables you need.</li>
-      <li><b>Project details</b>Project value and your contact details.</li>
-      <li><b>Review quotation</b>Itemised price, VAT and delivery time.</li>
-      <li><b>Approve &amp; pay</b>Pay online and we start once documents arrive.</li>
+    <ol class="hurdles">
+      <li class="spot"><span class="mono">01</span><div><b>No approved baseline</b><span>We build it in Primavera P6 and get it approved by the consultant.</span></div></li>
+      <li class="spot"><span class="mono">02</span><div><b>No contemporaneous records</b><span>We set up monthly updates, daily records and a document controller.</span></div></li>
+      <li class="spot"><span class="mono">03</span><div><b>No official notices</b><span>We draft every notice and track every time-bar deadline.</span></div></li>
     </ol>
   </div>
 </section>
 
-<!-- DELAY ANALYSIS -->
-<section class="band" id="delay-analysis" aria-labelledby="delay-title">
+<section class="band" aria-labelledby="featured-title">
   <div class="wrap">
-    <div class="head">
-      <span class="label">Forensic planning</span>
-      <h2 class="h2" id="delay-title">Delay analysis &amp; extension of time. <em>Prove the cause, recover the time.</em></h2>
-      <p class="lede">The method follows the evidence. Excusable and compensable delay are assessed, concurrency is tested and each event is linked to the critical path.</p>
+    <div class="head head--split">
+      <div><span class="label">Featured projects</span>
+      <h2 class="h2" id="featured-title">SAR 1bn+ of projects <em>supported</em></h2></div>
+      <a class="text-link" href="projects.html">View all 7 projects <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
     </div>
-    <div class="split">
-      <div>
-        <h3 class="mono" style="font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);margin-bottom:1rem">Our approach</h3>
-        <ol class="steps6">
-          <li><span class="mono">01</span><h4>Gather the record</h4><p>Contract, baseline, all updates, notices, instructions, correspondence and site records.</p></li>
-          <li><span class="mono">02</span><h4>Check programme integrity</h4><p>Logic, constraints, calendars and critical path before any analysis is relied on.</p></li>
-          <li><span class="mono">03</span><h4>Build the event register</h4><p>Every delay event with its date, cause, responsible party and contractual basis.</p></li>
-          <li><span class="mono">04</span><h4>Select the method</h4><p>The method follows the available records and the question to be answered.</p></li>
-          <li><span class="mono">05</span><h4>Analyse and test</h4><p>Quantify each event's effect on completion; test concurrency and sensitivity.</p></li>
-          <li><span class="mono">06</span><h4>Report</h4><p>A forensic report with transparent assumptions and supporting records.</p></li>
-        </ol>
-      </div>
-      <div>
-        <h3 class="mono" style="font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);margin-bottom:1rem">Methods we use</h3>
-        <div class="methods">
-          <div class="method">
-            <svg viewBox="0 0 64 40" aria-hidden="true"><rect x="2" y="8" width="34" height="6" fill="none" stroke="#7F8CAA" stroke-dasharray="3 2"/><rect x="2" y="22" width="46" height="8" fill="#DDE4F0"/><rect x="36" y="22" width="12" height="8" fill="#C8102E"/></svg>
-            <div><h4>As-planned vs as-built</h4><p>Compares the baseline with actual progress to show where slippage arose. Suited to simpler projects or limited records.</p></div>
-          </div>
-          <div class="method">
-            <svg viewBox="0 0 64 40" aria-hidden="true"><rect x="2" y="8" width="24" height="8" fill="#DDE4F0"/><rect x="26" y="8" width="10" height="8" fill="#C8102E"/><rect x="36" y="24" width="26" height="8" fill="#DDE4F0"/><path d="M36 16v8" stroke="#C8102E"/></svg>
-            <div><h4>Impacted as-planned</h4><p>Inserts delay events into the baseline to model their effect. Useful when updates are not available, with its limits stated.</p></div>
-          </div>
-          <div class="method">
-            <svg viewBox="0 0 64 40" aria-hidden="true"><path d="M20 4v32M40 4v32" stroke="#7F8CAA" stroke-dasharray="2 2"/><rect x="2" y="10" width="20" height="7" fill="#DDE4F0"/><rect x="22" y="10" width="8" height="7" fill="#C8102E"/><rect x="30" y="23" width="30" height="7" fill="#DDE4F0"/></svg>
-            <div><h4>Time impact analysis</h4><p>Inserts each event into the programme as it stood at the time, update by update, to measure its effect on the critical path.</p></div>
-          </div>
-          <div class="method">
-            <svg viewBox="0 0 64 40" aria-hidden="true"><rect x="2" y="4" width="18" height="32" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.2)"/><rect x="23" y="4" width="18" height="32" fill="rgba(255,90,110,.18)" stroke="#C8102E"/><rect x="44" y="4" width="18" height="32" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.2)"/><path d="M4 28 L18 24 L26 22 L39 14 L46 12 L60 8" stroke="#DDE4F0" stroke-width="2" fill="none"/></svg>
-            <div><h4>Windows analysis</h4><p>Divides the project into time windows and examines how the critical path shifted in each. Well suited to projects with regular updates.</p></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <h3 class="mono" style="font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);margin:3rem 0 1rem">Types of delay we separate</h3>
-    <div class="dtypes" style="margin-top:0">
-      <div class="dtype dtype--tc"><b>Excusable &amp; compensable</b><span>Time and cost.</span></div>
-      <div class="dtype"><b>Excusable, non-compensable</b><span>Time only.</span></div>
-      <div class="dtype"><b>Non-excusable</b><span>Contractor risk.</span></div>
-      <div class="dtype"><b>Concurrent</b><span>Assessed carefully under the contract.</span></div>
-    </div>
-
-    <div class="receive">
-      <div class="receive-box spot">
-        <h3>What you receive</h3>
-        <ul class="ticks">
-          <li>A clear chronology</li>
-          <li>The event register</li>
-          <li>The critical path analysis</li>
-          <li>A forensic delay report</li>
-          <li>A supported basis for an extension of time, negotiation or dispute</li>
-        </ul>
-      </div>
-      <p class="note-red">An accepted EOT can protect against liquidated damages for the awarded period. Prolongation costs need their own assessment, because an award of time does not by itself establish the recoverable amount. That is where quantum comes in.</p>
-    </div>
-  </div>
-</section>
-
-<!-- QUANTUM + ARBITRATION -->
-<section class="band band--paper" aria-labelledby="quantum-title">
-  <div class="wrap">
-    <div class="feature">
-      <img src="assets/img/quantum.jpg" alt="Steel frame under construction with a mobile crane" loading="lazy" width="540" height="458">
-      <div class="feature-copy">
-        <span class="label">Quantum &amp; dispute avoidance</span>
-        <h2 class="h2" id="quantum-title">Put a figure on delay <em>and protect your position</em></h2>
-        <p class="lede">Rates are built from your own records, with a cost summary an engineer can examine line by line. Each cost head ties to a proven delay event, so entitlement and amount tell one story.</p>
-        <ol class="flow">
-          <li><span><b>Identify cost heads</b> and the entitlement basis</span></li>
-          <li><span><b>Collect and verify records:</b> timesheets, plant, invoices, payments</span></li>
-          <li><span><b>Build rates</b> and calculate each head with its time link</span></li>
-          <li><span><b>Check for double counting</b> and apply any contractual limits</span></li>
-          <li><span><b>Present an auditable</b> claim schedule</span></li>
-        </ol>
-        <ul class="chips" aria-label="Cost heads">
-          <li>Prolongation</li><li>Loss of productivity</li><li>Equipment standing time</li><li>Site overheads</li><li>Extended insurance &amp; bonds</li><li>Financing</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="feature feature--flip">
-      <img src="assets/img/arbitration.jpg" alt="Expert presenting a programme analysis to a tribunal" loading="lazy" width="790" height="447">
-      <div class="feature-copy">
-        <span class="label">Arbitration &amp; expert services</span>
-        <h2 class="h2">One consistent story <em>from schedule to hearing</em></h2>
-        <p class="lede">When a dispute reaches arbitration, technical evidence must stay clear under scrutiny. We keep technical issues apart from legal argument, with every finding traceable to records.</p>
-        <ol class="flow">
-          <li><span><b>Early case assessment:</b> test each position on time and cost</span></li>
-          <li><span><b>Evidence build:</b> chronology linked to programme and cost records</span></li>
-          <li><span><b>Expert reports:</b> independent time and quantum reports</span></li>
-          <li><span><b>Responding to the other side:</b> rebuttals of method and calculation gaps</span></li>
-          <li><span><b>Witness and hearing support:</b> witness prep and hearing presentations</span></li>
-          <li><span><b>Post-hearing support:</b> closing submissions and technical clarifications</span></li>
-        </ol>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRE-CONTRACT -->
-<section class="band" aria-labelledby="pre-title">
-  <div class="wrap">
-    <div class="head">
-      <span class="label">Pre-contract</span>
-      <h2 class="h2" id="pre-title">Win the tender <em>on credibility</em></h2>
-      <p class="lede">A tender is won on credibility and lost on gaps. We help contractors submit bids that are complete, compliant and deliverable, with quantities that hold up through variations and claims.</p>
-    </div>
-    <div class="pre">
-      <article class="pre-card spot">
-        <img src="assets/img/tender.jpg" alt="Tender documents, drawings and a laptop on a desk" loading="lazy" width="1035" height="583">
-        <div class="pre-body">
-          <h3>Tender preparation</h3>
-          <ol class="flow">
-            <li><span><b>Review the tender documents:</b> scope, interfaces, milestones, conditions and risks</span></li>
-            <li><span><b>Build the programme and method</b> that show how the work will be delivered</span></li>
-            <li><span><b>Price with confidence:</b> every rate traces to a quantity</span></li>
-            <li><span><b>Log clarifications,</b> assumptions and qualifications</span></li>
-            <li><span><b>Check and submit</b> after a final compliance review</span></li>
-          </ol>
-          <p class="callout">After award, the tender programme becomes the starting point for the approved baseline, so the bid and the project start from the same plan.</p>
-        </div>
-      </article>
-      <article class="pre-card spot">
-        <img src="assets/img/meeting.jpg" alt="Project team reviewing quantities together" loading="lazy" width="1200" height="366">
-        <div class="pre-body">
-          <h3>Quantity takeoff</h3>
-          <ol class="flow">
-            <li><span><b>We receive</b> drawings, specifications and the BOQ</span></li>
-            <li><span><b>We measure digitally</b> in PlanSwift</span></li>
-            <li><span><b>We reconcile</b> and present quantities in clear Excel schedules</span></li>
-            <li><span><b>We review</b> against scope and revisions</span></li>
-            <li><span><b>We update</b> when drawings change</span></li>
-          </ol>
-          <p class="callout">Send us your drawings and we will return organised, checkable quantities, freeing your estimators to focus on pricing and risk.</p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section class="band band--paper" id="projects" aria-labelledby="projects-title">
-  <div class="wrap">
-    <div class="head">
-      <span class="label">Sectors &amp; project experience</span>
-      <h2 class="h2" id="projects-title">Experience across <em>four sectors</em></h2>
-      <p class="lede">Planning, delay and cost support that connects the programme to site evidence and contract requirements, across very different delivery environments.</p>
-    </div>
-    <div class="sectors">
-      <div class="sector"><img src="assets/img/sector-infrastructure.jpg" alt="Highway interchange under construction" loading="lazy" width="592" height="333"><span>Infrastructure</span></div>
-      <div class="sector"><img src="assets/img/sector-commercial.jpg" alt="Glass office tower under construction" loading="lazy" width="592" height="333"><span>Commercial buildings</span></div>
-      <div class="sector"><img src="assets/img/sector-industrial.jpg" alt="Steel-framed industrial facility under construction" loading="lazy" width="592" height="333"><span>Industrial facilities</span></div>
-      <div class="sector"><img src="assets/img/sector-hospitality.jpg" alt="Hotel courtyard with palm trees" loading="lazy" width="592" height="333"><span>Hospitality</span></div>
-    </div>
-
-    <div class="projects">
+    <div class="projects projects--featured">
       <article class="project">
         <div class="project-img"><img src="assets/img/project-shamla-pharma.jpg" alt="Shamla Pharmaceutical Plant site" loading="lazy" width="484" height="484"><span class="project-value">SAR 129M</span></div>
         <div class="project-body">
@@ -1282,100 +255,11 @@ form.enquiry { border-radius: 18px; box-shadow: 0 40px 90px -30px rgba(0,0,0,.9)
           <ul class="scope"><li>Baseline</li><li>Progress reporting</li><li>EOT claim</li></ul>
         </div>
       </article>
-      <article class="project">
-        <div class="project-img"><img src="assets/img/project-kafd-residence.jpg" alt="KAFD residential towers" loading="lazy" width="348" height="574"><span class="project-value">SAR 24M</span></div>
-        <div class="project-body">
-          <h3>KAFD Residence Fit-out, Parcels 5.03–5.05</h3>
-          <p class="project-loc"><svg viewBox="0 0 12 12" fill="currentColor"><path d="M6 0a4 4 0 0 0-4 4c0 3 4 8 4 8s4-5 4-8a4 4 0 0 0-4-4zm0 5.5A1.5 1.5 0 1 1 6 2.5a1.5 1.5 0 0 1 0 3z"/></svg>Riyadh</p>
-          <ul class="scope"><li>Baseline</li><li>Progress reporting</li><li>EOT claim</li></ul>
-        </div>
-      </article>
-      <article class="project">
-        <div class="project-img"><img src="assets/img/project-events-investment-fund.jpg" alt="Events Investment Fund head office interior" loading="lazy" width="679" height="452"><span class="project-value">SAR 15M</span></div>
-        <div class="project-body">
-          <h3>Events Investment Fund Head Office</h3>
-          <p class="project-loc"><svg viewBox="0 0 12 12" fill="currentColor"><path d="M6 0a4 4 0 0 0-4 4c0 3 4 8 4 8s4-5 4-8a4 4 0 0 0-4-4zm0 5.5A1.5 1.5 0 1 1 6 2.5a1.5 1.5 0 0 1 0 3z"/></svg>Riyadh</p>
-          <ul class="scope"><li>Baseline</li><li>Progress reporting</li><li>EOT claim</li></ul>
-        </div>
-      </article>
-      <article class="project">
-        <div class="project-img"><img src="assets/img/project-diriyah-vip.jpg" alt="Diriyah at sunset" loading="lazy" width="583" height="388"><span class="project-value">SAR 6.8M</span></div>
-        <div class="project-body">
-          <h3>VIP Furniture &amp; Fit-outs, Headquarters</h3>
-          <p class="project-loc"><svg viewBox="0 0 12 12" fill="currentColor"><path d="M6 0a4 4 0 0 0-4 4c0 3 4 8 4 8s4-5 4-8a4 4 0 0 0-4-4zm0 5.5A1.5 1.5 0 1 1 6 2.5a1.5 1.5 0 0 1 0 3z"/></svg>Diriyah</p>
-          <ul class="scope"><li>EOT claim</li></ul>
-        </div>
-      </article>
-      <article class="project">
-        <div class="project-img"><img src="assets/img/project-bsf-takhasusi.jpg" alt="BSF branch interior fit-out" loading="lazy" width="732" height="426"><span class="project-value">SAR 5M</span></div>
-        <div class="project-body">
-          <h3>BSF Takhasusi Fit-outs</h3>
-          <p class="project-loc"><svg viewBox="0 0 12 12" fill="currentColor"><path d="M6 0a4 4 0 0 0-4 4c0 3 4 8 4 8s4-5 4-8a4 4 0 0 0-4-4zm0 5.5A1.5 1.5 0 1 1 6 2.5a1.5 1.5 0 0 1 0 3z"/></svg>Riyadh</p>
-          <ul class="scope"><li>Baseline</li><li>Progress reporting</li><li>EOT claim</li></ul>
-        </div>
-      </article>
-      <div class="project project--total">
-        <span class="label">Across our portfolio</span>
-        <b><small>SAR</small>1bn+</b>
-        <p>of total project value supported with planning, delay and claims expertise.</p>
-        <a class="btn btn--red" href="#contact" style="justify-self:start">Discuss your project</a>
-      </div>
     </div>
-    <p class="swipe-hint">Swipe to see all projects</p>
+    <p class="swipe-hint">Swipe to see more</p>
   </div>
 </section>
 
-<!-- TEAM -->
-<section class="band band--navy" id="team" aria-labelledby="team-title">
-  <div class="wrap">
-    <div class="head">
-      <span class="label">People &amp; capability</span>
-      <h2 class="h2" id="team-title">Specialists who connect <em>scheduling, reporting and evidence</em></h2>
-      <p class="lede">Each engagement is led by an Operations Manager and staffed by the specialists your programme, claim or tender actually needs.</p>
-    </div>
-    <div class="team">
-      <div class="role spot">
-        <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="13" cy="13" r="8"/><path d="M19 19l7 7"/><path d="M9 14h3l2-4 2 6 1-2h1"/></svg>
-        <h3>Forensic Schedule Analysts</h3>
-        <p>Reconstruct what happened from programmes and records, test which events moved completion, and separate excusable, compensable and concurrent delay.</p>
-      </div>
-      <div class="role spot">
-        <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h10M8 13h14M12 19h12M6 25h8"/></svg>
-        <h3>Senior Planning Engineers</h3>
-        <p>Develop baselines, WBS and logic, load resources and issue updates and variance narratives, warning early when float is eroding.</p>
-      </div>
-      <div class="role spot">
-        <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="4" width="20" height="22" rx="1"/><path d="M9 9h12M9 14h5M9 18h5M9 22h5M18 14h3M18 18h3M18 22h3"/></svg>
-        <h3>Quantum Claims Specialists</h3>
-        <p>Put a figure on delay and disruption, building rates from the contractor's own records into claims that can be audited line by line.</p>
-      </div>
-      <div class="role spot">
-        <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 4h12l5 5v17H7z"/><path d="M19 4v5h5M11 15l3 3 6-6"/></svg>
-        <h3>Tendering Specialists</h3>
-        <p>Review tender documents and risks, prepare method statements and tender programmes, and check compliance before submission.</p>
-      </div>
-      <div class="role spot">
-        <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 26L26 4"/><path d="M4 26l3-1M8 22l2 2M12 18l2 2M16 14l2 2M20 10l2 2"/></svg>
-        <h3>Quantity Takeoff Specialists</h3>
-        <p>Measure quantities from drawings and specifications in PlanSwift, producing checkable schedules tied to the bill of quantities.</p>
-      </div>
-      <div class="role spot">
-        <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 8h9l2 3h11v14H4z"/><path d="M10 18h10"/></svg>
-        <h3>Document Controller</h3>
-        <p>Keeps contract documents, notices, drawings and records indexed and time-stamped, and tracks notice and time-bar deadlines.</p>
-      </div>
-    </div>
-    <p class="swipe-hint">Swipe to see the whole team</p>
-    <ul class="tools" aria-label="Tools used in delivery">
-      <li><b>Primavera P6</b><span>Scheduling, activity logic and critical path review</span></li>
-      <li><b>Power BI</b><span>Dashboards and progress reporting</span></li>
-      <li><b>Excel</b><span>Reporting, analysis and tender documents</span></li>
-      <li><b>PlanSwift</b><span>Digital quantity takeoff</span></li>
-    </ul>
-  </div>
-</section>
-
-<!-- CLIENTS -->
 <section class="band" aria-labelledby="clients-title">
   <div class="wrap">
     <div class="head">
@@ -1397,91 +281,20 @@ form.enquiry { border-radius: 18px; box-shadow: 0 40px 90px -30px rgba(0,0,0,.9)
     <p class="coverage"><span>Offices and coverage: all over Saudi Arabia</span><span>Riyadh · Diriyah · Al Madinah · nationwide</span></p>
   </div>
 </section>
-
-<!-- CONTACT -->
-<section class="band band--navy" id="contact" aria-labelledby="contact-title">
-  <div class="wrap contact">
-    <div class="contact-side">
-      <span class="label">Working together</span>
-      <h2 class="h2" id="contact-title">Start with a free consultation <em>on your schedule or claim</em></h2>
-      <p class="lede">Bring the issue that needs a decision: an approval deadline, emerging slippage, an EOT submission or a disputed cost.</p>
-      <ol class="engage">
-        <li><div><b>Tell us the project context</b><span>Scope, contract stage, completion obligations and immediate concern.</span></div></li>
-        <li><div><b>Identify the available evidence</b><span>Contract, baseline, latest updates, notices and records.</span></div></li>
-        <li><div><b>Agree the support required</b><span>The technical question, deliverables and priorities.</span></div></li>
-        <li><div><b>Deliver, report and hand over</b><span>Agreed work with traceable records behind the analysis.</span></div></li>
-      </ol>
-      <dl class="cdetails">
-        <div class="cline">
-          <dt>Phone</dt>
-          <dd><a href="tel:+966582907870">+966 58 290 7870</a><a href="tel:+966500509776">+966 50 050 9776</a></dd>
-        </div>
-        <div class="cline">
-          <dt>WhatsApp</dt>
-          <dd><a class="wa-link" href="https://wa.me/966582907870?text=Hello%20Red%20Ocean%20Consult%2C%20I%27d%20like%20to%20discuss%20my%20project." target="_blank" rel="noopener"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16.04 3C9.4 3 4 8.36 4 14.97c0 2.11.56 4.17 1.62 5.99L4 29l8.25-2.16a12.1 12.1 0 0 0 5.79 1.47h.01C24.68 28.31 30 22.95 30 16.34 30 13.13 28.75 10.11 26.47 7.84A11.9 11.9 0 0 0 16.04 3Zm0 22.98h-.01a9.95 9.95 0 0 1-5.08-1.39l-.36-.22-4.9 1.28 1.31-4.77-.24-.38a9.86 9.86 0 0 1-1.52-5.28c0-5.48 4.48-9.94 9.99-9.94a9.9 9.9 0 0 1 7.06 2.92 9.84 9.84 0 0 1 2.92 7.03c0 5.49-4.48 9.75-9.16 9.75Zm5.48-7.43c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.41-1.48-.89-.79-1.49-1.77-1.67-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.47 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.48.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35Z"/></svg>Chat on WhatsApp · +966 58 290 7870</a></dd>
-        </div>
-        <div class="cline">
-          <dt>Email</dt>
-          <dd>
-            <span class="row"><a href="mailto:saadsr@redoceanconsult.com" id="em1">saadsr@redoceanconsult.com</a><button class="copy-btn" type="button" data-copy="saadsr@redoceanconsult.com" data-target="em1">Copy</button></span>
-            <span class="row"><a href="mailto:safwan.aaraj@redoceanconsult.com" id="em2">safwan.aaraj@redoceanconsult.com</a><button class="copy-btn" type="button" data-copy="safwan.aaraj@redoceanconsult.com" data-target="em2">Copy</button></span>
-          </dd>
-        </div>
-        <div class="cline">
-          <dt>Office</dt>
-          <dd>Building 8323, Ahmad Bin Ubayd Street 4788, Al Khalidiyah Dist., 42317 Al Madinah Al Munawwarah, Saudi Arabia</dd>
-        </div>
-      </dl>
+<section class="band cta-wrap" aria-labelledby="cta-title">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <span class="label">Next step</span>
+        <h2 class="h2" id="cta-title">A delay, a claim or a tender deadline? <em>Let's talk.</em></h2>
+        <p class="lede">Get an instant quotation online, message us on WhatsApp, or book a free consultation on your schedule or claim.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn--red" href="order.html">Order online <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
+        <a class="btn btn--wa" href="https://wa.me/966582907870?text=Hello%20Red%20Ocean%20Consult%2C%20I%27d%20like%20to%20discuss%20my%20project." target="_blank" rel="noopener"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16.04 3C9.4 3 4 8.36 4 14.97c0 2.11.56 4.17 1.62 5.99L4 29l8.25-2.16a12.1 12.1 0 0 0 5.79 1.47h.01C24.68 28.31 30 22.95 30 16.34 30 13.13 28.75 10.11 26.47 7.84A11.9 11.9 0 0 0 16.04 3Zm0 22.98h-.01a9.95 9.95 0 0 1-5.08-1.39l-.36-.22-4.9 1.28 1.31-4.77-.24-.38a9.86 9.86 0 0 1-1.52-5.28c0-5.48 4.48-9.94 9.99-9.94a9.9 9.9 0 0 1 7.06 2.92 9.84 9.84 0 0 1 2.92 7.03c0 5.49-4.48 9.75-9.16 9.75Zm5.48-7.43c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.41-1.48-.89-.79-1.49-1.77-1.67-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.47 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.48.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35Z"/></svg>WhatsApp</a>
+        <a class="btn btn--line" href="contact.html">Free consultation</a>
+      </div>
     </div>
-
-    <form class="enquiry" id="enquiry" novalidate>
-      <div class="form-title">
-        <h3>Request a consultation</h3>
-        <p>We reply within one business day.</p>
-      </div>
-      <div class="field">
-        <label for="f-name">Full name *</label>
-        <input id="f-name" name="name" type="text" autocomplete="name" required>
-      </div>
-      <div class="field">
-        <label for="f-company">Company</label>
-        <input id="f-company" name="company" type="text" autocomplete="organization">
-      </div>
-      <div class="field">
-        <label for="f-email">Email *</label>
-        <input id="f-email" name="email" type="email" autocomplete="email" required>
-      </div>
-      <div class="field">
-        <label for="f-phone">Phone</label>
-        <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+966">
-      </div>
-      <div class="field field--full">
-        <label for="f-service">What do you need help with?</label>
-        <select id="f-service" name="service">
-          <option value="">Choose a service</option>
-          <option>Baseline programme (Primavera P6)</option>
-          <option>Progress reporting &amp; dashboards</option>
-          <option>Delay analysis / extension of time</option>
-          <option>Quantum claim</option>
-          <option>Dispute avoidance / notices</option>
-          <option>Arbitration &amp; expert services</option>
-          <option>Tender preparation</option>
-          <option>Quantity takeoff</option>
-          <option>Not sure yet</option>
-        </select>
-      </div>
-      <div class="field field--full">
-        <label for="f-message">Your project and immediate concern *</label>
-        <textarea id="f-message" name="message" required placeholder="Project, contract stage, and what needs a decision"></textarea>
-      </div>
-      <div class="hp" aria-hidden="true"><label for="f-website">Leave empty</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
-      <p class="form-status" id="form-status" role="status" hidden></p>
-      <div class="form-foot">
-        <small>Your details stay confidential.</small>
-        <button class="btn btn--red" type="submit" id="f-submit"><span>Send request</span>
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 8h11M9 4l4 4-4 4"/></svg></button>
-      </div>
-    </form>
   </div>
 </section>
 
@@ -1497,19 +310,20 @@ form.enquiry { border-radius: 18px; box-shadow: 0 40px 90px -30px rgba(0,0,0,.9)
       <div>
         <h4>Services</h4>
         <ul>
-          <li><a href="#services">Planning &amp; baselines</a></li>
-          <li><a href="#delay-analysis">Delay analysis &amp; EOT</a></li>
-          <li><a href="#quantum-title">Quantum &amp; arbitration</a></li>
-          <li><a href="#pre-title">Tender &amp; takeoff</a></li>
+          <li><a href="planning.html">Planning &amp; baselines</a></li>
+          <li><a href="delay-analysis.html">Delay analysis &amp; EOT</a></li>
+          <li><a href="quantum-arbitration.html">Quantum &amp; arbitration</a></li>
+          <li><a href="tender-takeoff.html">Tender &amp; takeoff</a></li>
         </ul>
       </div>
       <div>
         <h4>Company</h4>
         <ul>
-          <li><a href="#about">Our story</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#team">Team &amp; tools</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="about.html">Our story</a></li>
+          <li><a href="order.html">Order online</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html#team">Team &amp; tools</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div>
@@ -1544,299 +358,6 @@ form.enquiry { border-radius: 18px; box-shadow: 0 40px 90px -30px rgba(0,0,0,.9)
   </div>
 </dialog>
 
-<script>
-(function () {
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-
-  // Cursor spotlight on glass cards
-  document.addEventListener('pointermove', function (e) {
-    var el = e.target.closest && e.target.closest('.spot'); if (!el) return;
-    var r = el.getBoundingClientRect();
-    el.style.setProperty('--mx', (e.clientX - r.left) + 'px'); el.style.setProperty('--my', (e.clientY - r.top) + 'px');
-  });
-
-  // Clients marquee: duplicate the logos for a seamless loop
-  var cl = document.querySelector('.clients');
-  if (cl) Array.prototype.slice.call(cl.children).forEach(function (li) { var c = li.cloneNode(true); c.setAttribute('aria-hidden', 'true'); cl.appendChild(c); });
-
-  // Count-up numbers when they come into view
-  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    var counter = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (!en.isIntersecting) return; counter.unobserve(en.target);
-        var node = Array.prototype.filter.call(en.target.childNodes, function (n) { return n.nodeType === 3 && /\d/.test(n.nodeValue); })[0];
-        if (!node) return;
-        var m = node.nodeValue.match(/(\d+)/), end = +m[1], t0 = null, pre = node.nodeValue.slice(0, m.index), post = node.nodeValue.slice(m.index + m[1].length);
-        var step = function (t) { t0 = t0 || t; var k = Math.min(1, (t - t0) / 1400); node.nodeValue = pre + Math.round(end * (1 - Math.pow(1 - k, 3))) + post; if (k < 1) requestAnimationFrame(step); };
-        requestAnimationFrame(step);
-      });
-    }, { threshold: .6 });
-    document.querySelectorAll('.numbers b, .stat b').forEach(function (b) { counter.observe(b); });
-  }
-
-  // Header shadow + current section in the menu
-  var header = document.querySelector('.site-header');
-  var onScroll = function () { header.classList.toggle('scrolled', window.scrollY > 8); };
-  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
-  if ('IntersectionObserver' in window) {
-    var links = {};
-    document.querySelectorAll('.nav-links a').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
-    var spy = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (!en.isIntersecting || !links[en.target.id]) return;
-        Object.keys(links).forEach(function (k) { links[k].classList.toggle('active', k === en.target.id); });
-      });
-    }, { rootMargin: '-45% 0px -50% 0px' });
-    Object.keys(links).forEach(function (id) { var el = document.getElementById(id); if (el) spy.observe(el); });
-
-    // Gentle lift-in for blocks below the fold (they stay fully visible)
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      var lifter = new IntersectionObserver(function (entries) {
-        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); lifter.unobserve(en.target); } });
-      }, { rootMargin: '0px 0px -8% 0px' });
-      document.querySelectorAll('.head, .stat, .pa-card, .stage, .pkg, .steps6 li, .method, .feature, .pre-card, .sector, .role, .clients li, .contact-side, form.enquiry').forEach(function (el, i) {
-        if (el.getBoundingClientRect().top < window.innerHeight) return;
-        el.classList.add('lift');
-        el.style.transitionDelay = (i % 3) * 70 + 'ms';
-        lifter.observe(el);
-      });
-    }
-  }
-
-  var nav = document.querySelector('.nav'), menuBtn = document.getElementById('menu-btn');
-  menuBtn.addEventListener('click', function () {
-    var open = nav.classList.toggle('open');
-    menuBtn.setAttribute('aria-expanded', open);
-  });
-  document.querySelectorAll('#mobile-menu a').forEach(function (a) {
-    a.addEventListener('click', function () { nav.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); });
-  });
-
-  document.querySelectorAll('[data-copy]').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var select = function () {
-        var r = document.createRange(); r.selectNodeContents(document.getElementById(b.dataset.target));
-        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected';
-      };
-      try {
-        navigator.clipboard.writeText(b.dataset.copy).then(function () {
-          b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1800);
-        }, select);
-      } catch (e) { select(); }
-    });
-  });
-
-  var form = document.getElementById('enquiry'), status = document.getElementById('form-status'),
-      submit = document.getElementById('f-submit'), label = submit.querySelector('span');
-  function show(msg, ok) { status.textContent = msg; status.className = 'form-status ' + (ok ? 'ok' : 'err'); status.hidden = false; }
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var name = form.elements.name.value.trim(), email = form.elements.email.value.trim(), msg = form.elements.message.value.trim();
-    if (!name || !msg || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      show('Please add your name, a valid email address and a short description of your project.', false); return;
-    }
-    submit.disabled = true; label.textContent = 'Sending…';
-    fetch('contact.php', { method: 'POST', body: new FormData(form) })
-      .then(function (r) { return r.json(); })
-      .then(function (d) {
-        if (d.ok) { form.reset(); show('Thank you. Your request has been sent and we will reply within one business day.', true); }
-        else show(d.error || 'Your request could not be sent. Please email saadsr@redoceanconsult.com.', false);
-      })
-      .catch(function () { show('Your request could not be sent from here. Please email saadsr@redoceanconsult.com or call +966 58 290 7870.', false); })
-      .then(function () { submit.disabled = false; label.textContent = 'Send request'; });
-  });
-})();
-
-// ── Online ordering ──
-(function () {
-  var cfg = null, svcId = null, step = 0, units = 1, band = null, express = false, picked = {}, client = {}, sending = false, result = null;
-  var dlg = document.getElementById('wiz'), body = document.getElementById('wiz-body'), totalEl = document.getElementById('wiz-total'),
-      next = document.getElementById('wiz-next'), back = document.getElementById('wiz-back'), steps = document.querySelectorAll('#wiz-steps li');
-  var sar = function (n) { return 'SAR ' + Math.round(n).toLocaleString('en-US'); };
-  var esc = function (t) { return String(t).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
-
-  fetch('pricing.json').then(function (r) { return r.json(); }).then(function (c) {
-    cfg = c;
-    document.querySelectorAll('[data-from]').forEach(function (el) {
-      var sv = c.services[el.dataset.from], u = sv.unit ? sv.unit.min : 1, t = 0;
-      if (sv.choice === 'single') t = Math.min.apply(null, sv.items.map(function (it) { return it.price; }));
-      else sv.items.forEach(function (it) { if (it.required) t += it.price * (it.perUnit ? u : 1); });
-      el.textContent = sar(t);
-    });
-  }).catch(function () {});
-
-  function calc() {
-    var sv = cfg.services[svcId], mult = band ? band.multiplier : 1, lines = [], sub = 0, days = 0;
-    sv.items.forEach(function (it) {
-      if (!it.required && !picked[it.id]) return;
-      var q = it.perUnit ? units : 1, amt = Math.round(it.price * q * mult);
-      lines.push([it.label + (q > 1 ? ' × ' + q : ''), amt]); sub += amt; days += it.days * q;
-    });
-    if (express) { var x = Math.round(sub * (cfg.express.multiplier - 1)); lines.push([cfg.express.label, x]); sub += x; }
-    days = Math.max(1, Math.ceil(Math.max(days, sv.baseDays) * (express ? cfg.express.daysFactor : 1)));
-    var vat = Math.round(sub * cfg.vatRate);
-    return { lines: lines, sub: sub, vat: vat, total: sub + vat, days: days };
-  }
-
-  function open(id) {
-    if (!cfg) { location.hash = '#contact'; return; }
-    svcId = id; step = 0; units = cfg.services[id].unit ? cfg.services[id].unit.default : 1; band = null; express = false; result = null; picked = {};
-    cfg.services[id].items.forEach(function (it) { if (it.default) picked[it.id] = true; });
-    document.getElementById('wiz-title').textContent = 'Order: ' + cfg.services[id].title;
-    document.getElementById('wiz-tag').textContent = cfg.services[id].tagline;
-    render();
-    if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open', '');
-  }
-
-  function render(err) {
-    var sv = cfg.services[svcId], q = calc(), h = '';
-    steps.forEach(function (li, i) { li.className = i === step ? 'on' : i < step ? 'done' : ''; });
-    totalEl.textContent = sar(q.sub);
-    back.hidden = step === 0 || step === 3;
-    next.disabled = sending;
-    next.textContent = ['Continue to project details', 'See my quotation', 'Approve & pay', 'Close'][step];
-    if (err) h += '<p class="wiz-error" role="alert">' + esc(err) + '</p>';
-
-    if (step === 0) {
-      var single = sv.choice === 'single';
-      h += '<h3>' + (single ? 'Choose your option' : 'What do you need?') + '</h3><p class="wiz-hint">' + (single ? 'Select one option.' : 'Tick every deliverable you want included.') + ' Prices are for projects up to SAR 10 million and adjust to your project value in the next step.</p><div class="opts">';
-      sv.items.forEach(function (it) {
-        var on = it.required || picked[it.id];
-        h += '<label class="opt"><input type="' + (single ? 'radio' : 'checkbox') + '" name="wiz-opt" data-item="' + it.id + '"' + (on ? ' checked' : '') + (it.required ? ' disabled' : '') + '>' +
-             '<span><b>' + esc(it.label) + (it.required ? '<em>Included</em>' : '') + '</b><small>' + esc(it.desc) + '</small></span>' +
-             '<span class="price">' + sar(it.price) + (it.perUnit ? '/event' : '') + '</span></label>';
-      });
-      h += '</div>';
-    }
-    if (step === 1) {
-      h += '<h3>About the project</h3><div class="field field--full"><label>Contract value</label><div class="seg">';
-      cfg.sizeBands.forEach(function (b) { h += '<label><input type="radio" name="band" value="' + b.id + '"' + (band && band.id === b.id ? ' checked' : '') + '>' + esc(b.label) + '</label>'; });
-      h += '</div></div>';
-      if (sv.unit) h += '<div class="field"><label for="w-units">' + esc(sv.unit.label) + '</label><div class="stepper"><button type="button" data-step="-1" aria-label="Fewer">−</button><input id="w-units" type="number" min="' + sv.unit.min + '" max="' + sv.unit.max + '" value="' + units + '"><button type="button" data-step="1" aria-label="More">+</button></div><small class="wiz-hint" style="margin:0">' + esc(sv.unit.help) + '</small></div>';
-      h += '<label class="switch"><input type="checkbox" id="w-express"' + (express ? ' checked' : '') + '><span>' + esc(cfg.express.label) + '<small>Faster delivery for urgent deadlines, +' + Math.round((cfg.express.multiplier - 1) * 100) + '% on the quotation.</small></span></label>';
-      h += '<div class="wiz-grid">' +
-        fld('name', 'Full name *', 'text', 'name') + fld('company', 'Company', 'text', 'organization') +
-        fld('email', 'Email *', 'email', 'email') + fld('phone', 'Phone', 'tel', 'tel') +
-        '<div class="field field--full"><label for="w-project">Project name *</label><input id="w-project" data-c="project" type="text" value="' + esc(client.project || '') + '" placeholder="e.g. Office tower, Riyadh"></div>' +
-        '<div class="field field--full"><label for="w-notes">Notes (optional)</label><textarea id="w-notes" data-c="notes" style="min-height:80px" placeholder="Deadlines, contract type, anything we should know">' + esc(client.notes || '') + '</textarea></div></div>';
-    }
-    if (step === 2) {
-      var today = new Date(), valid = new Date(today.getTime() + cfg.validityDays * 864e5), f = function (d) { return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }); };
-      h += '<div class="quote"><div class="quote-top"><div><b>' + esc(sv.title) + '</b>' + esc(client.project) + (client.company ? ' · ' + esc(client.company) : '') + '</div><div class="mono">Quotation date ' + f(today) + '<br>Valid until ' + f(valid) + '</div></div><table>';
-      q.lines.forEach(function (l) { h += '<tr><td>' + esc(l[0]) + '</td><td>' + sar(l[1]) + '</td></tr>'; });
-      h += '<tr class="sum"><td>Subtotal</td><td>' + sar(q.sub) + '</td></tr><tr class="sum"><td>VAT ' + Math.round(cfg.vatRate * 100) + '%</td><td>' + sar(q.vat) + '</td></tr>' +
-           '<tr class="total"><td>Total</td><td>' + sar(q.total) + '</td></tr></table>' +
-           '<div class="quote-terms"><div><b>' + q.days + ' working days</b>Estimated delivery</div><div><b>' + esc(band.label) + '</b>Project value</div><div><b>100% upfront</b>Payment terms</div></div></div>' +
-           '<p class="fineprint">Delivery time starts when we receive the project documents. If the documents show the scope is materially different, we will confirm any change with you before continuing. A copy of this quotation is emailed to ' + esc(client.email) + '.</p>';
-    }
-    if (step === 3) {
-      h += '<div class="done-box"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="32" cy="32" r="28"/><path d="M20 33l8 8 16-17"/></svg>';
-      if (result.paid) {
-        h += '<h3>Payment received</h3><p>Thank you. Your payment for order <b class="mono">' + esc(result.ref) + '</b> is complete and a receipt has been emailed to ' + esc(client.email) + '.</p>' +
-             '<p class="fineprint">PayPal transaction ' + esc(result.paid) + '. Our team will contact you within one business day to collect the contract, programme and records.</p></div>';
-      } else {
-        h += '<h3>Quotation approved</h3><p>Order reference <b class="mono">' + esc(result.ref) + '</b>. Total due <b>' + sar(result.total) + '</b>.</p>';
-        if (result.paypal) {
-          h += '<p class="fineprint">PayPal charges in US dollars: <b>USD ' + Number(result.paypal.usd).toLocaleString('en-US', { minimumFractionDigits: 2 }) + '</b> (fixed rate ' + esc(result.paypal.rate) + ' SAR = 1 USD). Pay with your PayPal account or any debit or credit card.</p>' +
-               '<div class="pp-box" id="pp-buttons"><p class="fineprint">Loading secure payment…</p></div><p class="pp-msg" id="pp-msg" role="alert" hidden></p>';
-        }
-        var bank = result.bank || {};
-        if (Object.keys(bank).length) {
-          h += (result.paypal ? '<details class="pay-alt"><summary>Prefer bank transfer?</summary>' : '<p>Please transfer the total to the account below. These details have also been emailed to you.</p>') + '<div class="bank">';
-          Object.keys(bank).forEach(function (k) { h += '<div><span>' + esc(k) + '</span><b>' + esc(bank[k]) + '</b></div>'; });
-          h += '</div>' + (result.paypal ? '</details>' : '');
-        }
-        if (!result.paypal && !Object.keys(bank).length) h += '<p>We will email you payment instructions within one business day.</p>';
-        h += '<p class="fineprint">Once payment is received, we will contact you to collect the contract, programme and records.</p></div>';
-      }
-    }
-    body.innerHTML = h;
-    body.scrollTop = 0;
-    if (step === 3 && result.paypal && !result.paid) mountPayPal();
-  }
-  function post(url, data) {
-    return fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
-      .then(function (r) { return r.json(); });
-  }
-  function ppMessage(text) { var m = document.getElementById('pp-msg'); if (m) { m.textContent = text; m.hidden = !text; } }
-  function mountPayPal() {
-    var box = document.getElementById('pp-buttons');
-    var go = function () {
-      box.innerHTML = '';
-      window.paypal.Buttons({
-        style: { layout: 'vertical', color: 'gold', shape: 'rect', label: 'pay' },
-        createOrder: function () {
-          ppMessage('');
-          return post('paypal.php', { action: 'create', ref: result.ref }).then(function (d) {
-            if (!d.ok) throw new Error(d.error); return d.id;
-          });
-        },
-        onApprove: function (data) {
-          ppMessage('Confirming your payment…');
-          return post('paypal.php', { action: 'capture', ref: result.ref, orderID: data.orderID }).then(function (d) {
-            if (d.ok) { result.paid = d.captureId; render(); }
-            else ppMessage(d.error || 'The payment was not completed. Please try again.');
-          });
-        },
-        onCancel: function () { ppMessage('Payment cancelled. You have not been charged. You can try again whenever you are ready.'); },
-        onError: function (err) { ppMessage((err && err.message) || 'PayPal is not available right now. Please try again or contact us.'); }
-      }).render('#pp-buttons');
-    };
-    if (window.paypal) return go();
-    var sdk = document.createElement('script');
-    sdk.src = 'https://www.paypal.com/sdk/js?client-id=' + encodeURIComponent(result.paypal.clientId) + '&currency=USD&intent=capture';
-    sdk.onload = go;
-    sdk.onerror = function () { box.innerHTML = ''; ppMessage('PayPal could not load. Check your connection or use the bank transfer option.'); };
-    document.head.appendChild(sdk);
-  }
-  function fld(k, label, type, ac) {
-    return '<div class="field"><label for="w-' + k + '">' + label + '</label><input id="w-' + k + '" data-c="' + k + '" type="' + type + '" autocomplete="' + ac + '" value="' + esc(client[k] || '') + '"></div>';
-  }
-
-  body.addEventListener('change', function (e) {
-    var t = e.target;
-    if (t.dataset.item) { if (t.type === 'radio') picked = {}; picked[t.dataset.item] = t.checked; }
-    if (t.name === 'band') band = cfg.sizeBands.filter(function (b) { return b.id === t.value; })[0];
-    if (t.id === 'w-express') express = t.checked;
-    if (t.id === 'w-units') { var u = cfg.services[svcId].unit; units = Math.min(u.max, Math.max(u.min, parseInt(t.value, 10) || u.min)); t.value = units; }
-    totalEl.textContent = sar(calc().sub);
-  });
-  body.addEventListener('input', function (e) { if (e.target.dataset.c) client[e.target.dataset.c] = e.target.value; });
-  body.addEventListener('click', function (e) {
-    var b = e.target.closest('[data-step]'); if (!b) return;
-    var u = cfg.services[svcId].unit; units = Math.min(u.max, Math.max(u.min, units + +b.dataset.step));
-    document.getElementById('w-units').value = units; totalEl.textContent = sar(calc().sub);
-  });
-
-  next.addEventListener('click', function () {
-    if (step === 0) { step = 1; return render(); }
-    if (step === 1) {
-      if (!band) return render('Please choose the contract value of the project.');
-      if (!(client.name || '').trim() || !(client.project || '').trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test((client.email || '').trim())) return render('Please add your name, a valid email address and the project name.');
-      step = 2; return render();
-    }
-    if (step === 2) {
-      sending = true; next.textContent = 'Processing…'; next.disabled = true;
-      var items = Object.keys(picked).filter(function (k) { return picked[k]; });
-      fetch('order.php', { method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ service: svcId, items: items, band: band.id, units: units, express: express, client: client }) })
-        .then(function (r) { return r.json(); })
-        .then(function (d) {
-          sending = false;
-          if (!d.ok) return render(d.error || 'Your order could not be processed.');
-          result = d; step = 3; render();
-        })
-        .catch(function () { sending = false; render('Online ordering is not available right now. Please email this quotation request to saadsr@redoceanconsult.com or call +966 58 290 7870.'); });
-      return;
-    }
-    if (step === 3) dlg.close();
-  });
-  back.addEventListener('click', function () { if (step > 0) { step--; render(); } });
-  document.getElementById('wiz-close').addEventListener('click', function () { dlg.close(); });
-  dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
-  document.querySelectorAll('[data-order]').forEach(function (b) { b.addEventListener('click', function () { open(b.dataset.order); }); });
-})();
-</script>
+<script src="assets/js/site.js" defer></script>
 </body>
 </html>

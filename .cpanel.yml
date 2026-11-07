@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/redohmgq/public_html/
-    - /bin/cp -R index.html 404.html contact.php order.php paypal.php common.php pricing.json .htaccess robots.txt sitemap.xml assets $DEPLOYPATH
+    - /bin/cp -R index.html about.html services.html planning.html delay-analysis.html quantum-arbitration.html tender-takeoff.html projects.html order.html contact.html 404.html contact.php order.php paypal.php common.php pricing.json .htaccess robots.txt sitemap.xml assets $DEPLOYPATH
