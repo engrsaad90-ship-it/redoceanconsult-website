@@ -68,3 +68,20 @@ The prices supplied are **examples** — replace them with your own before going
 - Every order is emailed to saadsr@redoceanconsult.com, and the client receives a copy of the quotation.
 - Every order is also saved to `public_html/orders/orders.csv` (download it from File Manager and open in Excel).
   The folder is locked so the public cannot view it.
+
+---
+
+# Updating the live site from GitHub (cPanel Git Version Control)
+
+One-time setup:
+1. cPanel → **Git™ Version Control** → **Create**.
+2. **Clone a Repository**: on.
+   - Clone URL: `https://github.com/engrsaad90-ship-it/redoceanconsult-website.git`
+   - Repository Path: `repositories/redoceanconsult-website` (NOT public_html)
+   - Repository Name: `redoceanconsult-website`
+3. Click **Create**.
+4. Click **Manage** next to the repository → **Pull or Deploy** tab → **Deploy HEAD Commit**.
+   The `.cpanel.yml` file copies the website into `public_html`.
+
+Every later update (after changes are pushed to GitHub):
+**Manage → Pull or Deploy → Update from Remote**, then **Deploy HEAD Commit**.
