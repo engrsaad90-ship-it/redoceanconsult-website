@@ -1,0 +1,5 @@
+# Build/preview files
+redoceanconsult-website.zip
+preview.html
+# Customer orders saved on the server — never commit
+orders/

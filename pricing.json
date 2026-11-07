@@ -1,0 +1,127 @@
+{
+  "_note": "Edit prices here (SAR, before VAT). Both the website and order.php read this file, so the quote the client sees always matches the amount charged. For a service with \"choice\": \"single\" the client picks exactly one option.",
+  "currency": "SAR",
+  "vatRate": 0.15,
+  "validityDays": 14,
+  "express": {
+    "label": "Express delivery (priority team)",
+    "multiplier": 1.2,
+    "daysFactor": 0.6
+  },
+  "sizeBands": [
+    {
+      "id": "s",
+      "label": "Up to SAR 10 million",
+      "multiplier": 1.0
+    },
+    {
+      "id": "m",
+      "label": "SAR 10 – 50 million",
+      "multiplier": 1.1
+    },
+    {
+      "id": "l",
+      "label": "SAR 50 – 150 million",
+      "multiplier": 1.1
+    },
+    {
+      "id": "xl",
+      "label": "Above SAR 150 million",
+      "multiplier": 1.1
+    }
+  ],
+  "services": {
+    "baseline": {
+      "title": "Baseline Programme",
+      "tagline": "A Primavera P6 baseline built on contract review and approved by the consultant.",
+      "baseDays": 7,
+      "items": [
+        {
+          "id": "p6",
+          "label": "Primavera P6 baseline programme",
+          "desc": "Contract and scope review, WBS, activity logic, calendars and critical path check.",
+          "price": 7000,
+          "days": 7,
+          "required": true
+        },
+        {
+          "id": "cost",
+          "label": "Cost loading",
+          "desc": "Contract value distributed across activities for cash-flow and earned value.",
+          "price": 500,
+          "days": 2,
+          "default": true
+        },
+        {
+          "id": "manpower",
+          "label": "Manpower loading",
+          "desc": "Labour resources assigned by trade to every activity.",
+          "price": 600,
+          "days": 2,
+          "default": true
+        },
+        {
+          "id": "boq",
+          "label": "BOQ mapping",
+          "desc": "Each BOQ item linked to its programme activities.",
+          "price": 800,
+          "days": 2
+        },
+        {
+          "id": "narrative",
+          "label": "Schedule narrative",
+          "desc": "Basis of schedule: assumptions, sequence, critical path and risks.",
+          "price": 1000,
+          "days": 1,
+          "default": true
+        }
+      ]
+    },
+    "eot": {
+      "title": "Extension of Time Claim",
+      "tagline": "Forensic delay analysis and a complete EOT submission linked to the critical path.",
+      "baseDays": 5,
+      "choice": "single",
+      "items": [
+        {
+          "id": "tia",
+          "label": "Detailed time impact analysis",
+          "desc": "Each delay event inserted into the programme as it stood at the time, update by update, with a full forensic EOT report.",
+          "price": 10000,
+          "days": 10,
+          "default": true
+        },
+        {
+          "id": "iap",
+          "label": "General impacted as-planned analysis",
+          "desc": "Delay events inserted into the baseline to show their effect on completion, with an EOT report.",
+          "price": 5000,
+          "days": 5
+        }
+      ]
+    },
+    "quantum": {
+      "title": "Quantum Claim",
+      "tagline": "Cost heads built from your records into a schedule that can be audited line by line.",
+      "baseDays": 7,
+      "choice": "single",
+      "items": [
+        {
+          "id": "tia_quantum",
+          "label": "Time impact analysis + quantum claim",
+          "desc": "Full time impact analysis to prove entitlement, plus the priced quantum claim.",
+          "price": 15000,
+          "days": 15,
+          "default": true
+        },
+        {
+          "id": "quantum",
+          "label": "Quantum claim only",
+          "desc": "Priced quantum claim built from your records, where entitlement to time is already established.",
+          "price": 7000,
+          "days": 8
+        }
+      ]
+    }
+  }
+}
