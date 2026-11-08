@@ -95,7 +95,7 @@
           "id": "iap",
           "label": "General impacted as-planned analysis",
           "desc": "Delay events inserted into the baseline to show their effect on completion, with an EOT report.",
-          "price": 5000,
+          "price": 7000,
           "days": 5
         }
       ]

@@ -833,3 +833,6 @@ form.enquiry { border-radius: 18px; box-shadow: 0 40px 90px -30px rgba(0,0,0,.9)
   .order-strip .btn { width: 100%; justify-content: center; }
   .subhero-inner { padding-block: 2.5rem 2rem; }
 }
+
+/* Infographics: show the whole image, never crop */
+.feature img.img-whole { aspect-ratio: auto; object-fit: contain; }
